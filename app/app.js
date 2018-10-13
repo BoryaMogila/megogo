@@ -4,10 +4,18 @@ const http = require('http'),
       err = require('./helpers/error'),
      {routes, allowedMethods}  = require('./routes'),
       app = new Koa();
-
+const render = require('koa-ejs');
 app.use(err);
 app.use(routes());
 app.use(allowedMethods());
+
+render(app, {
+  root: path.join(__dirname, 'view'),
+  layout: 'layout',
+  viewExt: 'ejs',
+  cache: false,
+  debug: false,
+});
 
 const server = http.createServer(app.callback()).listen(config.server.port, function () {
     console.log('%s listening at port %d', config.app.name, config.server.port);
