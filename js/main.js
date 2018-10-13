@@ -30,10 +30,19 @@ $( document ).ready(function() {
             method:"get",
             url: "/user",
             data: queryParams
-        }).done(function() {
+        }).done(function(resp) {
+        	if(resp.status &&  resp.status == 200){
+				$('#signIn').toggleClass("hide")
+				$('#signOut').toggleClass("hide")
+			}
             $("#widget_10").toggleClass("hide")
         });
 
+    })
+    $('#signOut').on('click', function (e) {
+        $('#signOut').toggleClass("hide")
+        $('#signIn').toggleClass("hide")
+        $.removeCookie("user_id")
     })
     $('#registration').on('click', function (e) {
         $("#form-action-login").toggleClass("hide")

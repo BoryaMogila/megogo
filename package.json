@@ -30,7 +30,8 @@
     "mysql-query-promise": "^1.0.1",
     "optimist": "*",
     "supervisor": "^0.12.0",
-    "to-time": "git://github.com/ApelSYN/to-time.git"
+    "to-time": "git://github.com/ApelSYN/to-time.git",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "frisby": "^0.8.5",

@@ -23,6 +23,19 @@ module.exports = {
         return query(qs,  'master')
     },
 
+    getUserData: function getUserData(params){
+        try{
+            if(params.login){
+                var qs = 'select * from test3.users where login=?';
+                return query(qs, [params.login],  'master')
+            }
+            return
+        }catch (e) {
+            console.log(e)
+            return
+        }
+    },
+
     userData: function getWebId(params){
         try{
             if(params.login){
