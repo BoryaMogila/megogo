@@ -20,8 +20,121 @@
 					</a>
 				</li>
 			</ul>
-			<a href="#" class="header_login">Sign in</a>
-			<a href="#" class="header_login">Sign out</a>
+			<a href="#" class="header_login" id="signIn">Sign in</a>
+			<a href="#" class="header_login hide" id="signOut">Sign out</a>
 		</nav>
 	</div>
 </header>
+
+
+
+<div class="widget authForm_v2 product-main type-modal direction-vertical" style="" id="widget_10" data-widget="{&quot;class&quot;:&quot;authForm_v2&quot;,&quot;id&quot;:&quot;widget_10&quot;,&quot;options&quot;:null}">
+	<div class="modal type-rootModal fade in center" id="modalAuth" tabindex="-1" role="dialog" style="display: block;">
+		<div class="modal-dialog" role="document" style="top: 22.369px;">
+			<div class="auth auth--login">
+				<div class="modal-header auth-header">
+
+
+					<button class="close" type="button" data-dismiss="modal" aria-hidden="true">
+						<svg class="svgicon svgicon-cross"><use xlink:href="/assets/images/svgicons.svg#svgicon-cross"></use></svg>
+					</button>
+
+					<h3 class="modal-title auth-title">
+						Вход
+					</h3>
+
+				</div>
+
+				<div class="modal-content auth-content">
+					<div class="auth-info">
+						Для входа или регистрации введите email или номер телефона.
+					</div>
+					<form class="form" method="get" action="/user" novalidate="novalidate">
+
+
+						<div class="form-group">
+							<input class="form-control" name="login" tabindex="1" placeholder="Логин">
+
+						</div>
+						<div class="form-group">
+							<input class="form-control hide" id="form-control-age" name="age" tabindex="1" placeholder="Возрост">
+						</div>
+						<div class="form-group ">
+							<input class="form-control hide" id="form-control-sex" name="sex" tabindex="1" placeholder="Пол">
+						</div>
+
+
+						<div class="form-action" id="form-action-login">
+							<button class="btn type-fill" type="submit" tabindex="4">Войти</button>
+						</div>
+						<div class="form-action hide" id="form-action-registration">
+							<button class="btn type-fill" type="submit" tabindex="4">Зарегистрироваться</button>
+						</div>
+					</form>
+
+					<div class="auth-another-action">
+						<a class="jsRegister" id="registration" href="javascript:void(0)">Регистрация</a> нового профиля
+					</div>
+				</div>
+
+				<div class="modal-footer auth-footer">
+					<div class="auth-social">
+						<div class="auth-social-title">
+							Авторизация через социальные сети
+						</div>
+
+
+
+						<ul class="socials">
+
+							<li>
+								<a class="social social-facebook type-rounded type-fill" id="fb-button" href="https://megogo.net/new_auth/diag/facebook" title="Facebook">
+									<i class="icon icon-facebook"></i>
+								</a>
+							</li>
+
+
+
+
+
+							<li>
+								<a class="social social-google-plus type-rounded type-fill" id="google-button" href="https://megogo.net/new_auth/diag/google" title="Google+">
+									<i class="icon icon-google-plus"></i>
+								</a>
+							</li>
+
+
+
+
+
+							<li>
+								<a class="social social-twitter type-rounded type-fill" id="twitter-button" href="https://megogo.net/new_auth/diag/twitter" title="Twitter">
+									<i class="icon icon-twitter"></i>
+								</a>
+							</li>
+
+						</ul>
+
+
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1538980283511/recaptcha__ru.js"></script><script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ru&amp;render=explicit&amp;onload=reCaptchaOnloadCallback"></script>
+
+			<script>
+                var reCaptchaWasNotCalled;
+
+                function reCaptchaOnloadCallback() {
+                    if(window["authForm_v2"]){
+                        window["authForm_v2"].prototype.captchaRender("widget_10");
+                    }else {
+                        reCaptchaWasNotCalled = true;
+                    }
+                }
+			</script>
+
+
+		</div>
+	</div>
+</div>

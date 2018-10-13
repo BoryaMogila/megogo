@@ -3,7 +3,6 @@ const myDb = require('../managers/testDbManager')
 
 
 async function indexAction (ctx) {
-
     let PSP_ID = ctx.cookies.get("PSP_ID")
     if(!PSP_ID){
         let respWebId = await myDb.getWebId();
@@ -15,4 +14,9 @@ async function indexAction (ctx) {
  await ctx.render('index');
 }
 
-module.exports = {indexAction};
+async function userAction(ctx){
+
+    console.log(ctx.query.login,"user!!!!")
+}
+
+module.exports = {indexAction,userAction};
