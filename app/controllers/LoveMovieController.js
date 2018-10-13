@@ -5,9 +5,7 @@ const _ = require('lodash');
 
 async function indexAction (ctx) {
   const { geners: queryGeners = [], text } = qs.parse(ctx.query);
-  console.log(text)
   const res = await axios(`http://api.hackathon.media/search?text=${encodeURIComponent(text)}`);
-  console.log(res)
   if (!queryGeners.length) {
     ctx.body = _.get(res, 'data.data.video_list', []);
     return
