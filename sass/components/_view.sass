@@ -13,6 +13,10 @@
 			+from_768
 				margin-right: -40px
 	&_itm
+
+		.view-2 & 
+			width: 205px
+
 		display: inline-block
 		font-size: 16px 
 		margin:
@@ -23,7 +27,8 @@
 		transition-duration: .3s
 		position: relative
 		box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
-
+		.view-2 &
+			box-shadow: none
 		+from_768
 			box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
 
@@ -46,18 +51,30 @@
 		&-img
 			height: 170px
 			width: 100%
+			
+			.view-2 &
+				height: auto
+				margin-bottom: 15px
+				+from_768
+					box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
+			
+			&-cont
+				.view-2 &
+					width: 205px
+					height: auto
+					display: block
 
 			
-.view_itm
+.view_itm-in
 	&:checked
 
-		&+.view_itm-label
+		&+.view_itm
 			box-shadow: none
 
 			&:hover
 				opacity: 1
 				
-			&::after
+			&::after 
 				content: ''
 				position: absolute
 				top: 0
