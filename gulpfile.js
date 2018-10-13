@@ -1,5 +1,7 @@
 'use strict';
 
+// run gulp
+
 let gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	gcmq = require('gulp-group-css-media-queries'),

@@ -1,5 +1,14 @@
-*
-	display: none
+@import 'core/_vars'
+@import 'core/_mixins'
+
+// components
+@import 'components/_header'
+
 
 body
-	display: none
+	background: $main_color
+	+to_414
+		color: red
+
+div
+	+from_769

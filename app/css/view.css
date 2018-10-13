@@ -1,1 +1,1 @@
-*,body{display:none}
+.header{display:none;color:red}body{background:#000}@media screen and (max-width:414px){body{color:red}}
