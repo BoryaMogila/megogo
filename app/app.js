@@ -1,4 +1,5 @@
 const http = require('http'),
+    {middlewarePsp} = require('./helpers/middleware')
       Koa = require('koa'),
       config = require('config'),
       err = require('./helpers/error'),
@@ -13,6 +14,8 @@ const mount =  require('koa-mount');
 app.use(err);
 app.use(routes());
 app.use(allowedMethods());
+//middleware
+app.use(middlewarePsp);
 
 render(app, {
   root: path.join(__dirname, 'view'),
