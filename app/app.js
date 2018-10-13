@@ -5,7 +5,9 @@ const http = require('http'),
      {routes, allowedMethods}  = require('./routes'),
       app = new Koa();
 const render = require('koa-ejs');
-const path = require('path')
+const path = require('path');
+const serve = require('koa-static');
+const mount =  require('koa-mount');
 app.use(err);
 app.use(routes());
 app.use(allowedMethods());
@@ -17,6 +19,10 @@ render(app, {
   cache: false,
   debug: false,
 });
+
+app.use(mount('/public', serve('./public', {
+  gzip: config.gzip
+})));
 
 const server = http.createServer(app.callback()).listen(config.server.port, function () {
     console.log('%s listening at port %d', config.app.name, config.server.port);
