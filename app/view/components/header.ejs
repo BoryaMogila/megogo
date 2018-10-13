@@ -49,7 +49,7 @@
 					<div class="auth-info">
 						Для входа или регистрации введите email или номер телефона.
 					</div>
-					<form class="form" method="get" action="/user" novalidate="novalidate">
+					<form id="form-login" class="form" method="get" action="/user" novalidate="novalidate">
 
 
 						<div class="form-group">
@@ -60,9 +60,8 @@
 							<input class="form-control hide" id="form-control-age" name="age" tabindex="1" placeholder="Возрост">
 						</div>
 						<div class="form-group ">
-							<input type="checkbox" class="form-control-sex hide"  name="sex" value="1"/>
-							<input type="checkbox" class="form-control-sex hide"  name="sex" value="2"/>
-							<input class="form-control hide" id="form-control-sex" name="sex" tabindex="1" placeholder="Пол">
+							<input type="radio" class="form-control-sex hide"  name="sax" value="1"/>
+							<input type="radio" class="form-control-sex hide"  name="sax" value="2"/>
 						</div>
 
 
