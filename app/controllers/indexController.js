@@ -16,7 +16,7 @@ async function indexAction (ctx) {
 
 async function userAction(ctx){
 
-    console.log(ctx.query.login,"user!!!!")
+    console.log(ctx.query,"user!!!!")
 }
 
 module.exports = {indexAction,userAction};

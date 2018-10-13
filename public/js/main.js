@@ -31,6 +31,6 @@ $( document ).ready(function() {
         $("#form-action-registration").toggleClass("hide")
 		$(".auth-another-action").toggleClass("hide")
 		$("#form-control-age").toggleClass("hide")
-        $("#form-control-sex").toggleClass("hide")
+        $(".form-control-sex").toggleClass("hide")
     })
 })
