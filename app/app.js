@@ -5,6 +5,7 @@ const http = require('http'),
      {routes, allowedMethods}  = require('./routes'),
       app = new Koa();
 const render = require('koa-ejs');
+const path = require('path')
 app.use(err);
 app.use(routes());
 app.use(allowedMethods());
