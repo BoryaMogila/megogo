@@ -1,8 +1,6 @@
 const myDb = require('../managers/testDbManager')
 
-
-
-async function indexAction (ctx) {
+async function middlewarePsp (ctx,next) {
 
     let PSP_ID = ctx.cookies.get("PSP_ID")
     if(!PSP_ID){
@@ -11,8 +9,7 @@ async function indexAction (ctx) {
             ctx.cookies.set("PSP_ID", respWebId.insertId)
         }
     }
-
- await ctx.render('index');
+    await next();
 }
 
-module.exports = {indexAction};
+module.exports = {middlewarePsp};
