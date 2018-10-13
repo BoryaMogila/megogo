@@ -4,10 +4,12 @@ const http = require('http'),
       err = require('./helpers/error'),
      {routes, allowedMethods}  = require('./routes'),
       app = new Koa();
+
 const render = require('koa-ejs');
 const path = require('path');
 const serve = require('koa-static');
 const mount =  require('koa-mount');
+
 app.use(err);
 app.use(routes());
 app.use(allowedMethods());

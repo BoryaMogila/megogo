@@ -1,7 +1,8 @@
 "use strict";
 
 const db = require('../../data/users.json'),
-      fakeDelay=100;
+      fakeDelay=100,
+      query = require("mysql-query-promise");
 
 module.exports = {
 
@@ -15,6 +16,11 @@ module.exports = {
                 resolve(db || []);
             }, fakeDelay);
         });
+    },
+
+    getWebId: function getWebId(){
+        var qs = 'insert into test3.webId set user_id=0';
+        return query(qs,  'master')
     },
 
     /**
