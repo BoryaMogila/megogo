@@ -21,16 +21,3 @@
 
 
 }())
-
-$( document ).ready(function() {
-    $('#signIn').on('click', function (e) {
-		$("#widget_10").toggleClass("hide")
-    })
-	$('#registration').on('click', function (e) {
-        $("#form-action-login").toggleClass("hide")
-        $("#form-action-registration").toggleClass("hide")
-		$(".auth-another-action").toggleClass("hide")
-		$("#form-control-age").toggleClass("hide")
-        $("#form-control-sex").toggleClass("hide")
-    })
-})
