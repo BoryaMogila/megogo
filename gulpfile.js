@@ -1,21 +1,25 @@
 'use strict';
 
-// run gulp
+// run gulp on terminal
 
 let gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	gcmq = require('gulp-group-css-media-queries'),
-	cssmin = require('gulp-cssmin');
-
-
+	cssmin = require('gulp-cssmin'),
+	plumber = require('gulp-plumber'),
+	autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
 	return gulp.src('./sass/**/*.sass')
+		.pipe(plumber())
 		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({
+			browsers: ['last 15 versions'],
+			cascade: false
+		}))
 		.pipe(gcmq())
 		.pipe(cssmin())
-		.pipe(gulp.dest('app/css'));
-
+		.pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('sass:watch', function () {

@@ -1,16 +1,8 @@
-@import 'core/_vars'
-@import 'core/_mixins'
+@import './core/_vars'
+@import './core/_mixins'
+@import './core/_core'
 
 // components
-@import 'components/_header'
+@import './components/_header'
 
 
-body
-	background: $main_color
-	max-width: 960px
-	margin: 0 auto
-	+to_414
-		color: red
-
-div
-	+from_769
