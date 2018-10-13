@@ -36,6 +36,24 @@ services:
       - esdata:/usr/share/elasticsearch/data
     networks:
       - local
+      -
+  mysql:
+    image: mysql
+    container_name: mysql
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    labels:
+      - "traefik.ui.frontend.rule=Host:es"
+      - "traefik.ui.port=9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - local
 
 volumes:
   esdata:
@@ -43,3 +61,7 @@ volumes:
 
 networks:
   local:
+
+
+
+  docker run --name some-mysql -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
