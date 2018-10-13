@@ -1,7 +1,8 @@
 @import '_vars'
 @import '_mixins'
 
-	
+*:focus
+	outline: none
 *,
 ::after,	
 ::before
@@ -11,13 +12,46 @@ input[type="checkbox"],
 input[type="radio"]
 	display: none
 
+
+
+input
+	padding: 5px
+	height: 32px
+	line-height: 32
+	border: 1px solid $grey_color_light2
+
+button
+	height: 32px
+	line-height: 32px
+	padding: 0 15px
+	border: none
+	background: $blue_color
+	transition-duration: .3s
+	color: #fff
+	&:hover
+		opacity: 0.75
+		cursor: pointer
+
 body
 	@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=cyrillic')
 	font-size: 16px
 	line-height: 1.25
 	font-family: 'Roboto', sans-serif
 	margin: 0
- 
+	
+	&.open_modal_pop
+		overflow: hidden
+		position: fixed
+
+		&::before
+			content: ''
+			display: block
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: rgba($grey_color_light , .4)
+
 ul
 	padding: 0
 	margin: 0
@@ -32,7 +66,5 @@ a
 .hide
 	display: none !important
 
-.form-control-sex
-	display: inline-block !important
 
 
