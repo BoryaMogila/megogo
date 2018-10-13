@@ -1,0 +1,67 @@
+
+.view
+	&_cont
+		max-width: 960px
+		margin: 0 auto
+		padding: 0 15px
+
+
+		&-wrap
+			font-size: 0
+			+to_768
+				margin-right: -15px
+			+from_768
+				margin-right: -40px
+	&_itm
+		display: inline-block
+		font-size: 16px 
+		margin:
+			right: 40px
+			bottom: 40px
+		width: 200px
+		text-align: center
+		transition-duration: .3s
+		position: relative
+		box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
+
+		+from_768
+			box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
+
+		+to_768
+			width: calc(25% - 15px)
+			margin: 0 15px 15px 0
+
+		+to_640
+			width: calc(33.3% - 15px)
+
+		+to_520
+			width: calc(50% - 15px)
+
+		&:hover
+			cursor: pointer
+			opacity: 0.75
+
+		
+
+		&-img
+			height: 170px
+			width: 100%
+
+			
+.view_itm
+	&:checked
+
+		&+.view_itm-label
+			box-shadow: none
+
+			&:hover
+				opacity: 1
+				
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				background: rgba($yelow_red_color ,  .5)
