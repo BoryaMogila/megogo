@@ -1,7 +1,8 @@
 @import '_vars'
 @import '_mixins'
 
-	
+*:focus
+	outline: none
 *,
 ::after,	
 ::before
@@ -17,7 +18,20 @@ body
 	line-height: 1.25
 	font-family: 'Roboto', sans-serif
 	margin: 0
- 
+	
+	&.open_modal_pop
+		overflow: hidden
+		position: fixed
+
+		&::before
+			content: ''
+			display: block
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: rgba($grey_color_light , .4)
+
 ul
 	padding: 0
 	margin: 0
@@ -32,7 +46,5 @@ a
 .hide
 	display: none !important
 
-.form-control-sex
-	display: inline-block !important
 
 

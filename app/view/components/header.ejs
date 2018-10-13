@@ -28,15 +28,18 @@
 
 
 
-<div class="widget authForm_v2 product-main type-modal direction-vertical" style="" id="widget_10" data-widget="{&quot;class&quot;:&quot;authForm_v2&quot;,&quot;id&quot;:&quot;widget_10&quot;,&quot;options&quot;:null}">
-	<div class="modal type-rootModal fade in center" id="modalAuth" tabindex="-1" role="dialog" style="display: block;">
+<div class="widget authForm_v2 product-main type-modal direction-vertical hide"
+ style="" id="widget_10" data-widget="{&quot;class&quot;:&quot;authForm_v2&quot;,&quot;id&quot;:&quot;widget_10&quot;,&quot;options&quot;:null}">
+	<div class="modal type-rootModal fade in center" id="modalAuth" tabindex="-1"
+	 role="dialog" style="display: block;">
 		<div class="modal-dialog" role="document" style="top: 22.369px;">
 			<div class="auth auth--login">
 				<div class="modal-header auth-header">
 
 
 					<button class="close" type="button" data-dismiss="modal" aria-hidden="true">
-						<svg class="svgicon svgicon-cross"><use xlink:href="/assets/images/svgicons.svg#svgicon-cross"></use></svg>
+						<span class="close-line"></span>
+						<span class="close-line"></span>
 					</button>
 
 					<h3 class="modal-title auth-title">
@@ -57,11 +60,12 @@
 
 						</div>
 						<div class="form-group">
-							<input class="form-control hide" id="form-control-age" name="age" tabindex="1" placeholder="Возрост">
+							<input class="form-control hide" id="form-control-age" name="age"
+							 tabindex="1" placeholder="Возрост">
 						</div>
 						<div class="form-group ">
-							<input type="radio" class="form-control-sex hide"  name="sax" value="1"/>
-							<input type="radio" class="form-control-sex hide"  name="sax" value="2"/>
+							<input type="radio" class="form-control-sex hide" name="sax" value="1" />
+							<input type="radio" class="form-control-sex hide" name="sax" value="2" />
 						</div>
 
 
@@ -74,7 +78,8 @@
 					</form>
 
 					<div class="auth-another-action">
-						<a class="jsRegister" id="registration" href="javascript:void(0)">Регистрация</a> нового профиля
+						<a class="jsRegister" id="registration" href="javascript:void(0)">Регистрация</a>
+						нового профиля
 					</div>
 				</div>
 
@@ -89,7 +94,8 @@
 						<ul class="socials">
 
 							<li>
-								<a class="social social-facebook type-rounded type-fill" id="fb-button" href="https://megogo.net/new_auth/diag/facebook" title="Facebook">
+								<a class="social social-facebook type-rounded type-fill" id="fb-button"
+								 href="https://megogo.net/new_auth/diag/facebook" title="Facebook">
 									<i class="icon icon-facebook"></i>
 								</a>
 							</li>
@@ -99,7 +105,8 @@
 
 
 							<li>
-								<a class="social social-google-plus type-rounded type-fill" id="google-button" href="https://megogo.net/new_auth/diag/google" title="Google+">
+								<a class="social social-google-plus type-rounded type-fill" id="google-button"
+								 href="https://megogo.net/new_auth/diag/google" title="Google+">
 									<i class="icon icon-google-plus"></i>
 								</a>
 							</li>
@@ -109,7 +116,8 @@
 
 
 							<li>
-								<a class="social social-twitter type-rounded type-fill" id="twitter-button" href="https://megogo.net/new_auth/diag/twitter" title="Twitter">
+								<a class="social social-twitter type-rounded type-fill" id="twitter-button"
+								 href="https://megogo.net/new_auth/diag/twitter" title="Twitter">
 									<i class="icon icon-twitter"></i>
 								</a>
 							</li>
@@ -121,18 +129,19 @@
 				</div>
 			</div>
 
-			<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1538980283511/recaptcha__ru.js"></script><script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ru&amp;render=explicit&amp;onload=reCaptchaOnloadCallback"></script>
+			<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1538980283511/recaptcha__ru.js"></script>
+			<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ru&amp;render=explicit&amp;onload=reCaptchaOnloadCallback"></script>
 
 			<script>
-                var reCaptchaWasNotCalled;
+				var reCaptchaWasNotCalled;
 
-                function reCaptchaOnloadCallback() {
-                    if(window["authForm_v2"]){
-                        window["authForm_v2"].prototype.captchaRender("widget_10");
-                    }else {
-                        reCaptchaWasNotCalled = true;
-                    }
-                }
+				function reCaptchaOnloadCallback() {
+					if (window["authForm_v2"]) {
+						window["authForm_v2"].prototype.captchaRender("widget_10");
+					} else {
+						reCaptchaWasNotCalled = true;
+					}
+				}
 			</script>
 
 

@@ -1,5 +1,41 @@
 .type-modal
 	position: fixed
-	top: 50%
+	top: 50% 
 	left: 50%
-	z-index: 10
+	z-index: 2
+	margin-top: -240px
+	margin-left: -180px
+	padding: 20px
+	box-shadow: 0 0 15px 15px rgba($grey_color_light2 , .3)
+
+	+to_768
+		z-index: 10
+		margin: 0
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: #fff
+
+	.close
+		border: none
+		position: absolute
+		top: 5px
+		right: 5px
+		background: $grey_color_light2
+		height: 20px
+		width: 20px
+		border-radius: 50%
+
+		&-line
+			position: absolute
+			top: 50%
+			left: 15%
+			width: 70%
+			height: 1px
+			background: #000
+
+			&:nth-child(1)
+				transform: rotate(45deg)
+			&:nth-child(2)
+				transform: rotate(-45deg)
