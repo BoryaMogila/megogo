@@ -17,20 +17,35 @@
 
 	headerPopBg.addEventListener('click', mobPopupFunc);
 
+}())
 
 
+(function () {
+
+	var typeModal = document.querySelectorAll('.type-modal')
+	console.log(typeModal);
+
+	for (i = 0; i < typeModal.length; i++) {
+		var height = typeModal[i].offsetHeight;
+		var width = typeModal[i].offsetWidth;
+		var self = typeModal[i].style;
+		console.log(height);
+		console.log(width);
+
+	}
 
 }())
 
-$( document ).ready(function() {
-    $('#signIn').on('click', function (e) {
-        $("#widget_10").toggleClass("hide")
-    })
-    $('#registration').on('click', function (e) {
-        $("#form-action-login").toggleClass("hide")
-        $("#form-action-registration").toggleClass("hide")
-        $(".auth-another-action").toggleClass("hide")
-        $("#form-control-age").toggleClass("hide")
-        $(".form-control-sex").toggleClass("hide")
-    })
+
+$(document).ready(function () {
+	$('#signIn').on('click', function (e) {
+		$("#widget_10").toggleClass("hide")
+	})
+	$('#registration').on('click', function (e) {
+		$("#form-action-login").toggleClass("hide")
+		$("#form-action-registration").toggleClass("hide")
+		$(".auth-another-action").toggleClass("hide")
+		$("#form-control-age").toggleClass("hide")
+		$(".form-control-sex").toggleClass("hide")
+	})
 })
