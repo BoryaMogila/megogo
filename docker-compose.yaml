@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+
+  traefik:
+    image: "traefik"
+    container_name: "traefik"
+    restart: "always"
+    command: "--api --docker"
+    ports:
+      - "80:80"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    labels:
+      - "traefik.ui.frontend.rule=Host:traefik"
+      - "traefik.ui.port=8080"
+    networks:
+      local:
+        aliases:
+        - "megogo.local"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    container_name: elasticsearch
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    labels:
+      - "traefik.ui.frontend.rule=Host:es"
+      - "traefik.ui.port=9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - local
+      -
+  mysql:
+    image: mysql
+    container_name: mysql
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    labels:
+      - "traefik.ui.frontend.rule=Host:es"
+      - "traefik.ui.port=9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - local
+
+volumes:
+  esdata:
+    driver: local
+
+networks:
+  local:
+
+
+
+  docker run --name some-mysql -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag

@@ -13,6 +13,8 @@
   "dependencies": {
     "@echo-health/koa-prometheus-exporter": "0.0.9",
     "amqplib": "*",
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
     "config": "*",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-group-css-media-queries": "^1.2.2",
