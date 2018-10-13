@@ -49,15 +49,15 @@
 					<div class="auth-info">
 						Для входа или регистрации введите email или номер телефона.
 					</div>
-					<form id="form-login" class="form" method="get" action="/user" novalidate="novalidate">
+					<form id="form-login" class="form" method="get" action="">
 
 
 						<div class="form-group">
-							<input class="form-control" name="login" tabindex="1" placeholder="Логин">
+							<input class="form-control" required name="login"  placeholder="Логин">
 
 						</div>
 						<div class="form-group">
-							<input class="form-control hide" id="form-control-age" name="age" tabindex="1" placeholder="Возрост">
+							<input class="form-control hide" id="form-control-age" name="age"  placeholder="Возрост">
 						</div>
 						<div class="form-group ">
 							<input type="radio" class="form-control-sex hide"  name="sex" value="1"/>
@@ -78,47 +78,7 @@
 					</div>
 				</div>
 
-				<div class="modal-footer auth-footer">
-					<div class="auth-social">
-						<div class="auth-social-title">
-							Авторизация через социальные сети
-						</div>
 
-
-
-						<ul class="socials">
-
-							<li>
-								<a class="social social-facebook type-rounded type-fill" id="fb-button" href="https://megogo.net/new_auth/diag/facebook" title="Facebook">
-									<i class="icon icon-facebook"></i>
-								</a>
-							</li>
-
-
-
-
-
-							<li>
-								<a class="social social-google-plus type-rounded type-fill" id="google-button" href="https://megogo.net/new_auth/diag/google" title="Google+">
-									<i class="icon icon-google-plus"></i>
-								</a>
-							</li>
-
-
-
-
-
-							<li>
-								<a class="social social-twitter type-rounded type-fill" id="twitter-button" href="https://megogo.net/new_auth/diag/twitter" title="Twitter">
-									<i class="icon icon-twitter"></i>
-								</a>
-							</li>
-
-						</ul>
-
-
-					</div>
-				</div>
 			</div>
 
 			<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1538980283511/recaptcha__ru.js"></script><script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ru&amp;render=explicit&amp;onload=reCaptchaOnloadCallback"></script>

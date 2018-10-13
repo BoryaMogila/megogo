@@ -23,8 +23,17 @@
 }())
 
 $( document ).ready(function() {
-    $('#signIn').on('click', function (e) {
-        $("#widget_10").toggleClass("hide")
+    $('#form-login').on('submit', function (e) {
+        e.preventDefault()
+        var queryParams = $( this ).serialize()
+        $.ajax({
+            method:"get",
+            url: "/user",
+            data: queryParams
+        }).done(function() {
+            $("#widget_10").toggleClass("hide")
+        });
+
     })
     $('#registration').on('click', function (e) {
         $("#form-action-login").toggleClass("hide")

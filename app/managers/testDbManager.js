@@ -24,10 +24,12 @@ module.exports = {
     },
 
     userData: function getWebId(params){
-        console.log(params)
         try{
-            var qs = 'insert into test3.users set login=?, sex=?, age=?';
-            return query(qs, [params.login,params.sex,params.age],  'master')
+            if(params.login){
+                var qs = 'insert IGNORE test3.users set login=?, sex=?, age=?';
+                return query(qs, [params.login,params.sex,params.age],  'master')
+            }
+            return
         }catch (e) {
             console.log(e)
             return

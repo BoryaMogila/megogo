@@ -23,11 +23,11 @@
 }())
 
 $( document ).ready(function() {
-	$('#form-login').on('submit', function (e) {
-		e.preventDefault()
+    $('#form-login').on('submit', function (e) {
+        e.preventDefault()
         var queryParams = $( this ).serialize()
         $.ajax({
-			method:"get",
+            method:"get",
             url: "/user",
             data: queryParams
         }).done(function() {
@@ -35,7 +35,6 @@ $( document ).ready(function() {
         });
 
     })
-
     $('#registration').on('click', function (e) {
         $("#form-action-login").toggleClass("hide")
         $("#form-action-registration").toggleClass("hide")

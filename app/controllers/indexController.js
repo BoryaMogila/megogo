@@ -16,7 +16,7 @@ async function indexAction (ctx) {
 
 async function userAction(ctx,next){
     await myDb.userData(ctx.query);
-    // ctx.body({status:200});
+    ctx.body = {status:200};
     await next()
 }
 
