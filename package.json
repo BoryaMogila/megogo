@@ -20,6 +20,7 @@
     "koa-router": ">=7.4.x",
     "mysql-query-promise": "^1.0.1",
     "optimist": "*",
+    "supervisor": "^0.12.0",
     "to-time": "git://github.com/ApelSYN/to-time.git"
   },
   "devDependencies": {
@@ -29,7 +30,7 @@
     "optimist": "*"
   },
   "scripts": {
-    "start": "node --harmony index.js",
+    "start": "./node_modules/.bin/supervisor node --harmony index.js",
     "test": "node --harmony ./node_modules/jasmine-node/lib/jasmine-node/cli.js spec"
   },
   "engines": {
