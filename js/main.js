@@ -22,22 +22,22 @@
 
 }())
 
-
-(function () {
-
-	var typeModal = document.querySelectorAll('.type-modal')
-	console.log(typeModal);
-
-	for (i = 0; i < typeModal.length; i++) {
-		var height = typeModal[i].offsetHeight;
-		var width = typeModal[i].offsetWidth;
-		var self = typeModal[i].style;
-		console.log(height);
-		console.log(width);
-
-	}
-
-}())
+//
+// (function () {
+//
+// 	var typeModal = document.querySelectorAll('.type-modal')
+// 	console.log(typeModal);
+//
+// 	for (i = 0; i < typeModal.length; i++) {
+// 		var height = typeModal[i].offsetHeight;
+// 		var width = typeModal[i].offsetWidth;
+// 		var self = typeModal[i].style;
+// 		console.log(height);
+// 		console.log(width);
+//
+// 	}
+//
+// }())
 
 
 $( document ).ready(function() {
