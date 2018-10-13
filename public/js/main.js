@@ -22,6 +22,24 @@
 
 }())
 
+
+(function () {
+
+	var typeModal = document.querySelectorAll('.type-modal')
+	console.log(typeModal);
+
+	for (i = 0; i < typeModal.length; i++) {
+		var height = typeModal[i].offsetHeight;
+		var width = typeModal[i].offsetWidth;
+		var self = typeModal[i].style;
+		console.log(height);
+		console.log(width);
+
+	}
+
+}())
+
+
 $( document ).ready(function() {
     $('#form-login').on('submit', function (e) {
         e.preventDefault()
@@ -31,10 +49,10 @@ $( document ).ready(function() {
             url: "/user",
             data: queryParams
         }).done(function(resp) {
-        	if(resp.status &&  resp.status == 200){
-				$('#signIn').toggleClass("hide")
-				$('#signOut').toggleClass("hide")
-			}
+            if(resp.status &&  resp.status == 200){
+                $('#signIn').toggleClass("hide")
+                $('#signOut').toggleClass("hide")
+            }
             $("#widget_10").toggleClass("hide")
         });
 
