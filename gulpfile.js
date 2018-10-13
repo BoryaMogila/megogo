@@ -7,6 +7,7 @@ let gulp = require('gulp'),
 	gcmq = require('gulp-group-css-media-queries'),
 	cssmin = require('gulp-cssmin'),
 	plumber = require('gulp-plumber'),
+	minify = require('gulp-minify'),
 	autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
@@ -26,6 +27,18 @@ gulp.task('sass:watch', function () {
 	gulp.watch('./sass/**/*.sass', ['sass']);
 });
 
+
+gulp.task('js', function () {
+	return gulp.src('./js/*.js')
+		.pipe(minify())
+		.pipe(gulp.dest('./public/js'));
+});
+
+gulp.task('js:watch', function () {
+	gulp.watch('./js/*.js', ['js']);
+});
+
+
 gulp.task('default',
-	['sass', 'sass:watch'],
+	['sass', 'sass:watch', 'js', 'js:watch'],
 );

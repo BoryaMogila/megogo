@@ -1,22 +1,103 @@
 .header
-	background: $grey_color_darck
-
+	+from_768
+		background: $grey_color_darck
+		
 	a
-		color: $white_color
-
-	&_logo
-		text-transform: uppercase
-		padding: 15px 15px 15px 0
+		+from_768
+			color: $white_color
+		display: inline-block
+		transition-duration: .3s
 
 	&_cont
 		max-width: 1256px
 		margin: 0 auto
-		display: flex
-		align-items: center
+		padding: 0 15px
 
-	&_nav-list
-		display: flex
-		align-items: center
+		+to_768
+			padding-left: 0
 
-		&-itm-link
-			padding: 15px 15px 15px 0
+		&:after
+			content: ''
+			display: table
+			clear: both 
+
+	&_burger
+		display: none
+		+to_768
+			padding: 18px 15px
+			float: left
+			width: 50px
+			display: block
+
+		&-line
+			height: 2px
+			width: 100%
+			background: $grey_color_darck
+			display: block
+			margin-bottom: 4px
+			border-radius: 2px
+			&:last-child
+				margin-bottom: 0
+
+
+	&_logo
+		text-transform: uppercase
+		padding: 15px 15px 15px 0
+		float: left
+		transition-duration: .3s 
+
+		&:hover
+			opacity: 0.75
+	
+	&_login
+		+from_768
+			float: right 
+		padding: 15px 0 15px 0
+
+		&:hover
+			color: $yelow_red_color
+
+	&_nav
+		display: none
+		+to_768
+			padding: 15px
+		+from_768
+			display: block
+
+		@at-root
+			.header_nav-open
+				position: fixed
+				overflow: hidden
+				
+		.header_nav-open &
+			position: fixed
+			top: 0
+			left: 0
+			bottom: 0
+			display: block
+			width: 280px
+			background: $grey_color_light2
+			z-index: 3
+
+		&-list
+			+from_768
+				float: left
+				display: flex
+				align-items: center
+
+			&-itm-link
+				padding: 15px 15px 15px 0
+				
+				&:hover
+					color: $yelow_red_color
+	
+	&_pop-bg
+		.header_nav-open & 
+			position: fixed
+			top: 0
+			left: 0
+			bottom: 0
+			display: block
+			z-index: 2
+			width: 100%
+			background: rgba($grey_color_light2 , .5)
