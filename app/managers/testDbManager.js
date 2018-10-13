@@ -23,6 +23,33 @@ module.exports = {
         return query(qs,  'master')
     },
 
+    getUserData: function getUserData(params){
+        try{
+            if(params.login){
+                var qs = 'select * from test3.users where login=?';
+                return query(qs, [params.login],  'master')
+            }
+            return
+        }catch (e) {
+            console.log(e)
+            return
+        }
+    },
+
+    userData: function getWebId(params){
+        try{
+            if(params.login){
+                var qs = 'insert IGNORE test3.users set login=?, sex=?, age=?';
+                return query(qs, [params.login,params.sex,params.age],  'master')
+            }
+            return
+        }catch (e) {
+            console.log(e)
+            return
+        }
+
+    },
+
     /**
      * Get record by id from memory DB
      * @param id
