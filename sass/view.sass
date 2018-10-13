@@ -1,0 +1,14 @@
+@import 'core/_vars'
+@import 'core/_mixins'
+
+// components
+@import 'components/_header'
+
+
+body
+	background: $main_color
+	+to_414
+		color: red
+
+div
+	+from_769

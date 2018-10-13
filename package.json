@@ -14,22 +14,27 @@
     "@echo-health/koa-prometheus-exporter": "0.0.9",
     "amqplib": "*",
     "config": "*",
+    "gulp-group-css-media-queries": "^1.2.2",
     "koa": ">=2.5.1",
     "koa-body": ">=2.5.x",
     "koa-ejs": "^4.1.2",
     "koa-router": ">=7.4.x",
     "mysql-query-promise": "^1.0.1",
     "optimist": "*",
+    "supervisor": "^0.12.0",
     "to-time": "git://github.com/ApelSYN/to-time.git"
   },
   "devDependencies": {
     "frisby": "^0.8.5",
     "get-port": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.0.1",
     "jasmine-node": "*",
     "optimist": "*"
   },
   "scripts": {
-    "start": "node --harmony index.js",
+    "start": "./node_modules/.bin/supervisor node --harmony index.js",
     "test": "node --harmony ./node_modules/jasmine-node/lib/jasmine-node/cli.js spec"
   },
   "engines": {
