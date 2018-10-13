@@ -23,6 +23,18 @@ module.exports = {
         return query(qs,  'master')
     },
 
+    userData: function getWebId(params){
+        console.log(params)
+        try{
+            var qs = 'insert into test3.users set login=?, sex=?, age=?';
+            return query(qs, [params.login,params.sex,params.age],  'master')
+        }catch (e) {
+            console.log(e)
+            return
+        }
+
+    },
+
     /**
      * Get record by id from memory DB
      * @param id

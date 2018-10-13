@@ -14,9 +14,10 @@ async function indexAction (ctx) {
  await ctx.render('index');
 }
 
-async function userAction(ctx){
-
-    console.log(ctx.query,"user!!!!")
+async function userAction(ctx,next){
+    await myDb.userData(ctx.query);
+    // ctx.body({status:200});
+    await next()
 }
 
 module.exports = {indexAction,userAction};
