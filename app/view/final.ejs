@@ -1,0 +1,51 @@
+<% videos.map((video) => { %>
+<section class="final">
+	<img src="<%- video.image.big %>" alt="" class="final_img">
+	<div class="final_right">
+		<h2 class="final_title">
+			<%- video.title %>
+		</h2>
+		<p class="final_cat">
+			<%- video.year %>,
+			<%= video.genres.join(', ')  %>,
+			<%= video.country %>
+		</p>
+		<ul class="final_chars">
+			<li class="final_char">
+				IMDB: <%= video.rating_imdb %>
+			</li>
+			<li class="final_char">
+				Кинопоиск: <%= video.rating_kinopoisk %>
+			</li>
+		</ul>
+		<p class="final_desc">
+			<%= video.description %>
+		</p>
+
+		<ul class="final-chars__2">
+			<li class="final-chars__2-itm">
+				<span class="final-chars__2-name">ПЕРЕВОД</span>
+				<span class="final-chars__2-desc">Русский, Украинский</span>
+			</li>
+			<li class="final-chars__2-itm">
+				<span class="final-chars__2-name">СУБТИТРЫ</span>
+				<span class="final-chars__2-desc">Русский, Украинский</span>
+			</li>
+		</ul>
+
+		<div class="final_bottom">
+			<a href="#" class="final_bottom-link btn">
+				313 отзывов
+			</a>
+			<a href="#" class="final_bottom-link btn final_bottom-link__2">
+				Смотреть
+			</a>
+		</div>
+
+
+
+
+	</div>
+
+</section>
+<% }) %>
