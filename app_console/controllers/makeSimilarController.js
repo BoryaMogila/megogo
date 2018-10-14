@@ -19,8 +19,8 @@ async function index () {
   fs.writeFileSync('./similar.json', JSON.stringify(similar));
   const genres = _.uniq(_.flatten(videosArr.map(({ genres })=> genres)));
   const genresObject = {};
-  genres.forEach((genre, i) => genresObject[i + 1] = genre)
-  fs.writeFileSync('./ganers.json', JSON.stringify(genresObject));
+  genres.forEach((genre, i) => genresObject[i + 1] = { name: genre})
+  fs.writeFileSync('./ganers.json', JSON.stringify(genresObject, null, '\t'));
   console.timeEnd('similar');
 }
 
