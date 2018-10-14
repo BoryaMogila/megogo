@@ -5,12 +5,11 @@ const myDb = require('../managers/testDbManager'),
 
 
 async function indexAction (ctx) {
-    console.log("sdasdasdasd")
     var popularFimsResp = await axios(`http://api.hackathon.media/video`);
     popularFimsResp = popularFimsResp.data.data.video_list;
     var popularFims = []
     _.map(popularFimsResp, function (item) {
-        if(item.year && year == 2018){
+        if(item.year && item.year == 2018){
             popularFims.push({id: item.id, image: item.image, year: item.year, title: item.title})
         }
         return popularFims
@@ -25,7 +24,8 @@ async function indexAction (ctx) {
         }
     }
 
- await ctx.render('index');
+
+ await ctx.render('index',{popularFims: popularFims});
 }
 
 async function userAction(ctx,next){

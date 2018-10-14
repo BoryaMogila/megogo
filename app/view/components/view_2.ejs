@@ -2,26 +2,27 @@
 	<div class="view_cont">
 		<h2 class="view_main-title">ПРЕМЬЕРЫ</h2>
 		<div class="view_cont-wrap">
-			<% for(var i=0; i<supplies.length; i++) {%>
-			<li><%= supplies[i] %></li>
-			<% } %>
+
+			<% popularFims.map((item) => { %>
 			<articl class="view_itm">
 
 				<div class="view_itm-img">
 					<a href="#" class="view_itm-link">
-						<img src="https://s1.vcdn.biz/static/f/1364142601/image.jpg/pt/r193x272"
+						<img src="<%- item.image.small %>"
 						 alt="" class="view_itm-img-cont">
 						<span class="view_itm-pop">Смотреть</span>
 					</a>
 				</div>
 				<p class="view_itm-title">
-					Дэдпул 2
+					<%- item.title %>
 				</p>
-				<p class="view_itm-info">2018, Мелодрама</p>
+				<p class="view_itm-info"><%- item.year %>, Мелодрама</p>
 				<a class="view_itm-buy" href="#">
 					ПОКУПКА
 				</a>
 			</articl>
+
+			<% }); %>
 
 			<articl class="view_itm">
 
