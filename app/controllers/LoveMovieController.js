@@ -3,7 +3,7 @@ const axios = require('axios');
 const _ = require('lodash');
 
 
-async function indexAction (ctx) {
+async function apiAction (ctx) {
   const { geners: queryGeners = [], text } = qs.parse(ctx.query);
   const res = await axios(`http://api.hackathon.media/search?text=${encodeURIComponent(text)}`);
   if (!queryGeners.length) {
@@ -20,6 +20,11 @@ async function indexAction (ctx) {
 
 }
 
+async function indexAction (ctx) {
+    await ctx.render('index');
+}
+
 module.exports = {
-  indexAction,
+  apiAction,
+  indexAction
 };

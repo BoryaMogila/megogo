@@ -15,6 +15,9 @@ const router = new Router();
         .get('/love-movie-search', LoveMovie.indexAction)
         .get('/select-gener', SelectGener.indexAction);
 
+        .get('/api/love-movie-search', LoveMovie.apiAction)
+        .get('/love-movie-search', LoveMovie.indexAction)
+    ;
 
 module.exports = {
     routes () { return router.routes() },
