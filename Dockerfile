@@ -10,4 +10,4 @@ COPY . /var/www/app
 
 EXPOSE 8081
 
-CMD [ "node", "index.kuberneres.js" ]
+CMD [ "node", "index.js" ]
