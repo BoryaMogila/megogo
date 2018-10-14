@@ -36,13 +36,13 @@ module.exports = {
                 query: {
                     bool:
                         {
-                            // should: genres.map(genre => {
-                            //     return {
-                            //         term: {
-                            //             'film.genres.id': genre
-                            //         }
-                            //     }
-                            // }),
+                            should: genres.map(genre => {
+                                return {
+                                    term: {
+                                        'film.genres.id': genre
+                                    }
+                                }
+                            }),
                             must: films.map(film => {
                                 return {
                                     term: {
@@ -75,7 +75,7 @@ module.exports = {
 
         return films.map(film => {
             return {
-                id: film.id,
+                id: film.megogoId,
                 name: film.name,
                 count: film.count
             }
