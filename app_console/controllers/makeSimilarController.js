@@ -51,14 +51,15 @@ async function setRange ({ video: { id, country, genres, people, year }, videosA
 // cd /var/www/megogo; /usr/bin/node --harmony ./console.js --section makeSimilar --action setInDB
 async function setInDB () {
    var jsonUsersView = JSON.parse(fs.readFileSync('./similar.json'))
-       _.map(jsonUsersView,function (intem,key) {
-           let userId = jsonUsersView[key]
-           testDbManager.userData({
+        _.map(jsonUsersView, async function (intem,key) {
+           let userId = key
+           await testDbManager.userDataTest({
+               login: "parse",
                user_id:userId
            })
            _.map(jsonUsersView[key], function(item_i){
 
-               console.log(item_i)
+               // console.log(item_i)
                return
            })
            return;
