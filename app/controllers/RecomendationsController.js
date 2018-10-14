@@ -4,9 +4,9 @@ const axios = require('axios');
 const _ = require('lodash');
 
 
-
 async function indexAction (ctx) {
-  const { films, geners: queryGeners } = qs.parse(ctx.query);
+  let { films, geners: queryGeners } = qs.parse(ctx.query);
+  queryGeners = queryGeners.map(gener => decodeURI(gener));
   const commonSimilar = {};
   console.log(films)
   films.forEach(id => {
