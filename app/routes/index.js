@@ -12,8 +12,7 @@ const router = new Router();
     router
         .get('/', indexAction)
         .get('/user', userAction)
-        .get('/select-gener', SelectGener.indexAction);
-
+        .get('/select-gener', SelectGener.indexAction)
         .get('/api/love-movie-search', LoveMovie.apiAction)
         .get('/love-movie-search', LoveMovie.indexAction)
     ;
