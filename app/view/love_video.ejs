@@ -1,10 +1,13 @@
 <section class="view view-2 view_slide">
-    <form action="/recommendations?<%= geners.map(gener => 'gener=' + gener).join('&')%>"
+    <form action="/recommendations"
           class="view_cont">
+        <% geners.map((gener) => { %>
+           <input type="text" value="<%- gener %>" style="display: none" name="geners" />
+        <% }) %>
         <input type="text" id="search" class="vid_itm">
         <div class="view_cont-wrap" id="items">
         <% videos.map((video, i) => {%>
-        <input type="checkbox" name="films" value="<%= video.id %>" class="view_itm-in" id="video_item_<%- i %>">
+        <input type="checkbox" name="films[]" value="<%= video.id %>" class="view_itm-in" id="video_item_<%- i %>">
         <label for="video_item_<%- i %>" class="view_itm" style="display: inline-block">
                     <div class="view_itm-img">
                         <a class="view_itm-link">

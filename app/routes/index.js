@@ -3,6 +3,7 @@ const Router = require('koa-router'),
      {indexAction,userAction} = require('../controllers/indexController');
 const LoveMovie = require('../controllers/LoveMovieController');
 const SelectGener = require('../controllers/SelectGenerController');
+const Recomendations = require('../controllers/RecomendationsController');
 
 const router = new Router();
 
@@ -13,6 +14,7 @@ const router = new Router();
         .get('/api/love-movie-search', LoveMovie.apiAction)
         .get('/love-movie-search', LoveMovie.indexAction)
         .get('/recomendation', require('../controllers/recomendationController').indexAction)
+        .get('/recommendations', Recomendations.indexAction)
     ;
 
 module.exports = {
