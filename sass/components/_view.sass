@@ -53,7 +53,7 @@
 				+from_768
 					margin-right: -40px
 	&_itm
-
+		
 		.view_slide & 
 			margin: 0 20px
 			
@@ -69,10 +69,17 @@
 		transition-duration: .3s
 		position: relative
 		box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
-		.view-2 &
+
+		.view_1 &
+			background: #fff
+			
+			
+
+		.view_2 &
 			box-shadow: none
+
 		+from_768
-			box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
+			box-shadow: 0 0 12px 1.5px rgba($grey_color_light, .1)
 
 		+to_768
 			width: calc(25% - 15px)
@@ -116,6 +123,9 @@
 			margin: 5px 0
 			font-weight: 500
 
+		&-title
+			text-align: center
+
 		&-info
 			color: $grey_color_light
 			font-size: 12px
@@ -147,16 +157,32 @@
 				border: 15px solid transparent
 				margin: 0 -15px 15px 0
 				border-left-color: #fff
-			
+
+	&_svg-check
+		display: none
+
+
 	&_itm-in
 		&:checked
+			
+			
 
 			&+.view_itm
 				box-shadow: none
 
+				.view_svg-check
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+					margin: auto
+					z-index: 3
+
 				&:hover
 					opacity: 1
-					
+
 				&::after 
 					content: ''
 					position: absolute
@@ -164,6 +190,5 @@
 					right: 0
 					bottom: 0
 					left: 0
+					z-index: 2
 					background: rgba($yelow_red_color ,  .5)
-
-	
