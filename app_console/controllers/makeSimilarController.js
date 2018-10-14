@@ -16,7 +16,7 @@ async function index () {
     similar[video.id] = await setRange({video, videosArr});
   });
   await Promise.all(iterate);
-  fs.writeFileSync('./similar.json', JSON.stringify(similar));
+  fs.writeFileSync('./similar.json', JSON.stringify(similar, null, '\t'));
   const genres = _.uniq(_.flatten(videosArr.map(({ genres })=> genres)));
   const genresObject = {};
   genres.forEach((genre, i) => genresObject[i + 1] = { name: genre})
