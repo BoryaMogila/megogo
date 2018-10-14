@@ -15,7 +15,10 @@
         <% geners.map((gener) => { %>
         <input type="text" value="<%- gener %>" style="display: none" name="geners[]" />
         <% }) %>
-        <input type="text" id="search" class="vid_itm">
+
+        <h3>Поиск
+        </h3>
+        <input type="text" id="search" class="vid_itm" placeholder="Введи название">
         <div class="view_cont-wrap" id="items">
             <% videos.map((video, i) => {%>
             <input type="checkbox" name="films[]" value="<%= video.id %>" class="view_itm-in"
