@@ -1,20 +1,13 @@
-FROM node:latest
+FROM node
 
-# Please, check & delete unused files
-COPY app app
-COPY config config
-COPY data data
-COPY js js
-COPY public public
-COPY sass sass
+RUN mkdir -p /var/www/app
+WORKDIR /var/www/app
 
-COPY package.json .
-COPY spec spec
-COPY index.kubernetes.js .
-#COPY public/js/markerClustererPlus.js public/js/
-
-# build
+COPY package.json /var/www/app/
 RUN npm install
 
+COPY . /var/www/app
+
 EXPOSE 8081
-CMD node index.kubernetes.js
+
+CMD [ "node", "index.kuberneres.js" ]
