@@ -5,6 +5,23 @@ const client = new elasticsearch.Client({
     host: 'elasticsearch.filatium.com'
 });
 
+let _map = {
+    1: 1,
+    2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    "3": 2,
+    "4": 16,
+    "5": 4,
+    "6": 6,
+    "7": 9,
+    "8": 3,
+    "9": 11,
+    "10": 12,
+    "12": 12,
+    "13": 10,
+    "14": 5,
+    "15": 15
+};
+
 module.exports = {
     /**
      * @param [Number] genres
@@ -13,6 +30,20 @@ module.exports = {
      * @returns {Promise<*>}
      */
     recomendation: async function({genres = [], films, userId}) {
+        let newGenres = [];
+
+        for (let genre of genres) {
+            if (_map[Number(genre)]) {
+                if (Number(_map[Number(genre)])) {
+                    newGenres.push(Number(_map[Number(genre)]));
+                } else {
+                    newGenres = [...newGenres, ..._map[Number(genre)]]
+                }
+            }
+        }
+
+        genres = newGenres;
+
         let views = await client.search({
             index: 'views',
             type: 'views',
@@ -46,7 +77,7 @@ module.exports = {
                             must: films.map(film => {
                                 return {
                                     term: {
-                                        'film.id': film
+                                        'film.megogoId': film
                                     }
                                 }
                             })
@@ -73,7 +104,7 @@ module.exports = {
 
         films = Object.values(filmsHash);
 
-        return films.map(film => {
+        return films.sort((a, b) => b.count - a.count).map(film => {
             return {
                 id: film.megogoId,
                 name: film.name,
