@@ -31,7 +31,10 @@ async function indexAction (ctx) {
   });
   const promises = resArray.slice(0, 10).map(({ id }) => axios(`http://api.hackathon.media/video/${id}`));
   const videos = await Promise.all(promises).then(r => r.map(f => _.get(f, 'data.data', {})));
-  await ctx.render('final', { videos });
+  await ctx.render('final', { videos ,
+      title: "Кажется, я знаю, что тебя подойдет.",
+      description: "...",
+      statusButton: "hide"});
 }
 
 module.exports = { indexAction };

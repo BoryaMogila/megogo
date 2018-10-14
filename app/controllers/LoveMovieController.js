@@ -49,8 +49,8 @@ async function indexAction (ctx) {
     })
   }
   await ctx.render('love_video', { videos: videos.slice(0, 12), geners: queryGeners ,
-      title: "Кажется, я знаю, что тебя подойдет.",
-      description: "...",
+      title: "Укажите любимый фильм.",
+      description: "А вообще можешь выбрать все что понравилось ",
       statusButton: "hide"
   });
 }
@@ -59,3 +59,4 @@ module.exports = {
   apiAction,
   indexAction
 };
+
