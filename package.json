@@ -31,8 +31,7 @@
     "node-mysql-query-helper": "git+https://master_www:3000gtnhjdbx@git.ria.com:4455/packages/node-mysql-query-helper.git#master",
     "optimist": "*",
     "supervisor": "^0.12.0",
-    "to-time": "git://github.com/ApelSYN/to-time.git",
-    "underscore": "^1.9.1"
+    "to-time": "git://github.com/ApelSYN/to-time.git"
   },
   "devDependencies": {
     "frisby": "^0.8.5",

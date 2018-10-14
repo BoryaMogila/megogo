@@ -1,5 +1,5 @@
 const myDb = require('../managers/testDbManager'),
-    _ = require('underscore'),
+    _ = require('lodash'),
       axios = require("axios");
 
 
