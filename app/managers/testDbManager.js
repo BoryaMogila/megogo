@@ -3,9 +3,8 @@
 const db = require('../../data/users.json'),
       fakeDelay=100,
       query = require("mysql-query-promise"),
-       _ = require('lodash'),
-      queryHelper = require('node-mysql-query-helper');
-       _ = require('underscore');
+       _ = require('lodash')
+;
 
 
 module.exports = {
