@@ -25,7 +25,12 @@ async function indexAction (ctx) {
     }
 
 
- await ctx.render('index',{popularFims: popularFims});
+ await ctx.render('index',{popularFims: popularFims,
+     title: "Ищите что посмотреть?",
+     description: "Я - Йцукенг.\n" +
+         "\t\t\t\tПодберу фильм вместо Тебя.",
+     statusButton: ""
+ });
 }
 
 async function userAction(ctx,next){

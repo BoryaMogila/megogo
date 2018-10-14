@@ -48,7 +48,11 @@ async function indexAction (ctx) {
       return video.genres.length;
     })
   }
-  await ctx.render('love_video', { videos: _.shuffle(videos).slice(0, 12), geners: queryGeners });
+  await ctx.render('love_video', { videos: videos.slice(0, 12), geners: queryGeners ,
+      title: "Кажется, я знаю, что тебя подойдет.",
+      description: "...",
+      statusButton: "hide"
+  });
 }
 
 module.exports = {

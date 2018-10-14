@@ -48,7 +48,6 @@ var body = document.querySelector('body');
 var mobPopupFunc = function () {
     if (body.classList.contains('header_nav-open')) {
         body.classList.remove('header_nav-open')
-        remove;
     }
     body.classList.add('header_nav-open')
 }
