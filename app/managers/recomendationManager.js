@@ -36,13 +36,13 @@ module.exports = {
                 query: {
                     bool:
                         {
-                            // should: genres.map(genre => {
-                            //     return {
-                            //         term: {
-                            //             'film.genres.id': genre
-                            //         }
-                            //     }
-                            // }),
+                            should: genres.map(genre => {
+                                return {
+                                    term: {
+                                        'film.genres.id': genre
+                                    }
+                                }
+                            }),
                             must: films.map(film => {
                                 return {
                                     term: {
@@ -59,7 +59,12 @@ module.exports = {
 
         let filmsHash = {};
         for (let view of otherViews) {
-            filmsHash[view.film.id] = view.film;
+            if (!filmsHash[view.film.id]) {
+                filmsHash[view.film.id] = view.film;
+                filmsHash[view.film.id].count = 1;
+            } else {
+                filmsHash[view.film.id].count++;
+            }
         }
 
         for (let film of films) {
@@ -70,8 +75,9 @@ module.exports = {
 
         return films.map(film => {
             return {
-                id: film.id,
-                name: film.name
+                id: film.megogoId,
+                name: film.name,
+                count: film.count
             }
         });
     }
