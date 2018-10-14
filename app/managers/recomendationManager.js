@@ -104,7 +104,7 @@ module.exports = {
 
         films = Object.values(filmsHash);
 
-        return films.map(film => {
+        return films.sort((a, b) => b.count - a.count).map(film => {
             return {
                 id: film.megogoId,
                 name: film.name,
