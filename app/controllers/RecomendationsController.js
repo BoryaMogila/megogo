@@ -27,10 +27,10 @@ async function indexAction (ctx) {
   let { films = [], geners: queryGeners = [] } = qs.parse(ctx.query);
   queryGeners = queryGeners.map(gener => decodeURI(gener));
   const genres = queryGeners.map(gener => idsMap[gener]);
-  const views = await recomendation({genres, films: films.map(Number), userId: 0});
+  const views = await recomendation({genres, films: films.map(Number), userId: 0}) || [];
   const commonSimilar = {};
   films.forEach(id => {
-    const sim = similar[id];
+    const sim = similar[id] || [];
     sim.forEach(film => {
       if (films.includes(film.id.toString())) return;
       if (!commonSimilar[film.id]) {
