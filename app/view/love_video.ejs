@@ -1,4 +1,15 @@
 <section class="view view_1 view_film">
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="position:absolute;width:0;height:0;overflow:hidden;">
+        <symbol id="icon-arrow_1" fill="none" viewBox="0 0 28 22" id=".503836995956918"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M28 4L10 22 0 12l4-4 6 6L24 0l4 4z"
+                fill="#fff" />
+        </symbol>
+    </svg>
+
+
     <form action="/recommendations" class="view_cont">
         <% geners.map((gener) => { %>
         <input type="text" value="<%- gener %>" style="display: none" name="geners[]" />
@@ -14,6 +25,10 @@
                         <img src="<%- video.image.small%>" alt="" class="view_itm-img-cont">
                     </a>
                 </div>
+
+                <svg class="svg view_svg-check">
+                    <use href="#icon-arrow_1" />
+                </svg>
                 <p class="view_itm-title">
                     <%= video.title %>
                 </p>
