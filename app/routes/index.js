@@ -12,6 +12,7 @@ const router = new Router();
         .get('/select-gener', SelectGener.indexAction)
         .get('/api/love-movie-search', LoveMovie.apiAction)
         .get('/love-movie-search', LoveMovie.indexAction)
+        .get('/recomendation', require('../controllers/recomendationController').indexAction)
     ;
 
 module.exports = {
