@@ -17,7 +17,6 @@ $(document).ready(function () {
                             <p class="view_itm-info"> ' + video.year + ',  ' + video.genres[0] + '</p>\
                 </label>'
       });
-      console.log(items)
       $('#items').html(items)
     })
   })
