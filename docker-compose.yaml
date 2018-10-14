@@ -37,6 +37,18 @@ services:
     networks:
       - local
 
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      - "MYSQL_ROOT_PASSWORD=123"
+#    volumes:
+#      - mysqldata:/var/lib/mysql
+    networks:
+      local:
+        aliases:
+          - "mysql"
+
   app:
     image: app
     container_name: app

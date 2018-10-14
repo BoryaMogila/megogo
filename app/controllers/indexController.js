@@ -24,8 +24,7 @@ async function indexAction (ctx) {
             ctx.cookies.set("psp_id", respWebId.insertId,{ httpOnly: false })
         }
     }
-    //http://api.hackathon.media/video
- ctx.body = popularFims
+
  await ctx.render('index');
 }
 

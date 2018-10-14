@@ -4,9 +4,6 @@ const Router = require('koa-router'),
 const LoveMovie = require('../controllers/LoveMovieController');
 const SelectGener = require('../controllers/SelectGenerController');
 
-
-
-
 const router = new Router();
 
     router

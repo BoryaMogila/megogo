@@ -1,6 +1,10 @@
 @import '_vars'
 @import '_mixins'
 
+
+html
+	overflow-x: hidden
+
 *:focus
 	outline: none
 *,
@@ -41,6 +45,7 @@ body
 	font-family: 'Roboto', sans-serif
 	margin: 0
 	color:  $grey_color
+	background: #fafafa
 
 	&.open_modal_pop
 		overflow: hidden
@@ -70,6 +75,15 @@ a
 	display: none !important
 
 
+.svg 
+	width: 1em
+	height: 1em
+	stroke-width: 0
+	stroke: currentColor
+	fill: currentColor
+	vertical-align: middle
+	display: inline-block
+
 // 
 .slick
 	&-dots
@@ -85,7 +99,7 @@ a
 			top: 0
 			overflow: hidden
 			color: transparent
-			background: #fff
+			background: transparent
 
 			&::before,
 			&::after
@@ -104,8 +118,8 @@ a
 					background: $grey_color_light2
 		&-prev
 			right: 39px
+			right: 54px
 			+to_768
-				right: 54px
 
 			&::before
 				transform: rotate(45deg)
@@ -126,3 +140,5 @@ a
 				transform: rotate(45deg)
 				margin-left: -6px
 				margin-top: 2px
+
+
