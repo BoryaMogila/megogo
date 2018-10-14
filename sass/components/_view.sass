@@ -16,7 +16,7 @@
 		margin: 0 auto 30px
 		padding: 0 15px
 		position: relative
-		
+
 		&-bottom
 			display: flex
 			justify-content: space-between
@@ -55,8 +55,8 @@
 
 
 		&-wrap
-			.view_slide & 
-				overflow: hidden
+			.view_slide &
+			overflow: hidden
 
 			font-size: 0
 
@@ -72,15 +72,15 @@
 				+from_768
 					margin-right: -40px
 	&_itm
-		
-		.view_slide & 
-			margin: 0 20px
-			
-			+to_768
-				margin: 0 7.5px
+
+		.view_slide &
+		margin: 0 20px
+
+		+to_768
+			margin: 0 7.5px
 		vertical-align: top
 		display: inline-block
-		font-size: 16px 
+		font-size: 16px
 		margin:
 			right: 40px
 			bottom: 40px
@@ -88,17 +88,10 @@
 		transition-duration: .3s
 		position: relative
 		box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
-
-		.view_1 &
-			background: #fff
-			
-			
-
-		.view_2 &
+		.view-2 &
 			box-shadow: none
-
 		+from_768
-			box-shadow: 0 0 12px 1.5px rgba($grey_color_light, .1)
+			box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
 
 		+to_768
 			width: calc(25% - 15px)
@@ -111,7 +104,7 @@
 			width: calc(50% - 15px)
 
 		&:hover
-			.view_1 & 
+			.view_1 &
 				cursor: pointer
 				opacity: 0.75
 
@@ -120,8 +113,12 @@
 			width: 100%
 			position: relative
 			margin-bottom: 7px
+<<<<<<< HEAD
 
 			&-pop
+=======
+			& .img-label
+>>>>>>> 03acd89e1585332457173202c63332e5baab7f01
 				position: absolute
 				top: 0
 				left: 0
@@ -136,23 +133,34 @@
 				height: auto
 				+from_768
 					box-shadow: 0 0 3px 3px rgba($grey_color_light, .1)
-			
+
 			&-cont
+<<<<<<< HEAD
 				.view_2 &
 					width: 100%
 					height: auto
 					display: block
 			
+=======
+				.view-2 &
+				width: 100%
+				height: auto
+				display: block
+
+>>>>>>> 03acd89e1585332457173202c63332e5baab7f01
 		&-title,
 		&-info,
 		&-buy
 			margin: 5px 0
 			font-weight: 500
 
+<<<<<<< HEAD
 		&-title
 			.view_1 & 
 				text-align: center
 
+=======
+>>>>>>> 03acd89e1585332457173202c63332e5baab7f01
 		&-info
 			color: $grey_color_light
 			font-size: 12px
@@ -161,7 +169,7 @@
 			color:  $blue_color
 			font-size: 12px
 
-		&-pop			
+		&-pop
 			position: absolute
 			top: 0
 			right: 0
@@ -185,37 +193,32 @@
 				margin: 0 -15px 15px 0
 				border-left-color: #fff
 
+<<<<<<< HEAD
 	&_svg-check
 		display: none
 
 
+=======
+		&-label-title
+			margin-top: 30px
+			margin-bottom: 5px
+			text-align: center
+>>>>>>> 03acd89e1585332457173202c63332e5baab7f01
 	&_itm-in
 		&:checked
-			
-			
 
 			&+.view_itm
 				box-shadow: none
 
-				.view_svg-check
-					display: block
-					position: absolute
-					top: 0
-					right: 0
-					bottom: 0
-					left: 0
-					margin: auto
-					z-index: 3
-
 				&:hover
 					opacity: 1
 
-				&::after 
+				&::after
 					content: ''
 					position: absolute
 					top: 0
 					right: 0
 					bottom: 0
 					left: 0
-					z-index: 2
 					background: rgba($yelow_red_color ,  .5)
+

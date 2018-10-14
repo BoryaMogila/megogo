@@ -2,7 +2,9 @@
 
 const db = require('../../data/users.json'),
       fakeDelay=100,
-      query = require("mysql-query-promise");
+      query = require("mysql-query-promise"),
+       _ = require('underscore'),
+      queryHelper = require('node-mysql-query-helper');
 
 module.exports = {
 
@@ -36,11 +38,28 @@ module.exports = {
         }
     },
 
-    userData: function getWebId(params){
+    userDataTest: function userDataTest(params){
         try{
+            var searchString =  queryHelper.set(params) || "";
             if(params.login){
-                var qs = 'insert IGNORE test3.users set login=?, sex=?, age=?';
-                return query(qs, [params.login,params.sex,params.age],  'master')
+                var qs = `insert INTO test3.users_copy1 set ${searchString}`;
+                return query(qs, ..._.values(params),  'master')
+            }
+            return
+        }catch (e) {
+            console.log(e)
+            return
+        }
+
+    },
+
+    userData: function userData(params){
+        try{
+            var searchString =  queryHelper.set(params) || "";
+            if(params.login){
+                console.log(params)
+                var qs = `insert IGNORE test3.users set ${searchString}`;
+                return query(qs, [..._.values(params)],  'master')
             }
             return
         }catch (e) {

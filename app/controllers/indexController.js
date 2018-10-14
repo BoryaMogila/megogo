@@ -1,10 +1,22 @@
 const myDb = require('../managers/testDbManager'),
-    _ = require('underscore')
+    _ = require('underscore'),
+      axios = require("axios");
 
 
 
 async function indexAction (ctx) {
+    var popularFimsResp = await axios(`http://api.hackathon.media/video`);
+    popularFimsResp = popularFimsResp.data.data.video_list;
+    var popularFims = []
+    _.map(popularFimsResp, function (item) {
+        if(item.year && item.year == 2018){
+            popularFims.push({id: item.id, image: item.image, year: item.year, title: item.title})
+        }
+        return popularFims
+    })
+
     let PSP_ID = ctx.cookies.get("psp_id")
+
     if(!PSP_ID){
         let respWebId = await myDb.getWebId();
         if(respWebId && respWebId.insertId){
@@ -12,7 +24,8 @@ async function indexAction (ctx) {
         }
     }
 
- await ctx.render('index');
+
+ await ctx.render('index',{popularFims: popularFims});
 }
 
 async function userAction(ctx,next){

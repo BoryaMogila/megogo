@@ -10,10 +10,10 @@ module.exports = {
     },
   database: {
     master: {
-      host: 'mysql',
+      host: 'filatium.com',
       user: 'root',
       password: '123',
-      port: '3306',
+      port: '443',
       database: 'test',
       debug: false,
       connectionLimit: 10,

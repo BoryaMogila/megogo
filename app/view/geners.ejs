@@ -5,7 +5,7 @@
 			<% const gener = geners[i] %>
 			<input id="view_itm-input_<%= i %>" class="view_itm-in" type="checkbox" name="geners[]" value="<%- gener.name %>">
 			<label for="view_itm-input_<%= i %>" class="view_itm">
-				<div class="view_itm-img"><img src="<%- gener.img %>"></div>
+				<div class="view_itm-img"><img class="img-label" src="<%- gener.img %>"></div>
 				<p class="view_itm-label-title">
 					<%- gener.name %>
 				</p>
@@ -16,3 +16,5 @@
 		</div>
 	</form>
 </section>
+
+<script src="/public/js/initSlick.js"></script>

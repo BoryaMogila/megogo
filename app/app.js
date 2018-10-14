@@ -26,7 +26,7 @@ render(app, {
 });
 
 app.use(mount('/public', serve('./public', {
-  gzip: config.gzip
+  // gzip: config.gzip
 })));
 
 const server = http.createServer(app.callback()).listen(config.server.port, function () {

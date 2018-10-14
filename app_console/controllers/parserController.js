@@ -5,7 +5,7 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 
 /**
- * @module controllers/defaultController
+ * @module controllers/defaultController @module controllers/defaultController
  */
 async function index () {
     let peopleUrl = `https://letterboxd.com/people/popular/`;
