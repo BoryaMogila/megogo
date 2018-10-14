@@ -1,9 +1,10 @@
-<section class="view view_1">
+<section class="view view_1 view_geners">
 	<form action="/love-movie-search" class="view_cont">
 		<div class="view_cont-wrap">
 			<% Object.keys(geners).map((i) => { %>
 			<% const gener = geners[i] %>
-			<input id="view_itm-input_<%= i %>" class="view_itm-in" type="checkbox" name="geners[]" value="<%- gener.name %>">
+			<input id="view_itm-input_<%= i %>" class="view_itm-in" type="checkbox" name="geners[]"
+			 value="<%- gener.name %>">
 			<label for="view_itm-input_<%= i %>" class="view_itm">
 				<div class="view_itm-img"><img class="img-label" src="<%- gener.img %>"></div>
 				<p class="view_itm-label-title">

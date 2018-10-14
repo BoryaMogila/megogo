@@ -31,15 +31,21 @@
 				+to_768
 					margin-bottom: 10px
 			&-link
+				&__of
+					background: #fff
+					color:  $grey_color
+					+to_768
+						margin-bottom: 20px
+						box-shadow: 0 0 0  1px  $grey_color_light2
+
 				+from_768
 					width: calc(50% - 20px)
 
 
 		&-wrap
-			.view_slide &
-			overflow: hidden
-
 			font-size: 0
+			.view_slide &
+				overflow: hidden
 
 			&.slick-slider
 				+from_768
@@ -55,7 +61,7 @@
 	&_itm
 
 		.view_slide &
-		margin: 0 20px
+			margin: 0 20px
 
 		+to_768
 			margin: 0 7.5px
@@ -65,14 +71,14 @@
 		margin:
 			right: 40px
 			bottom: 40px
-		width: 210px
+		max-width: 162px
 		transition-duration: .3s
 		position: relative
-		box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
-		.view-2 &
-			box-shadow: none
-		+from_768
-			box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
+
+		.view_geners &
+			box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
+			+from_768
+				box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
 
 		+to_768
 			width: calc(25% - 15px)
@@ -90,11 +96,14 @@
 				opacity: 0.75
 
 		&-img
-			height: 170px
 			width: 100%
 			position: relative
 			margin-bottom: 7px
-			& .img-label
+			
+			.view_2 & 
+				height: auto
+
+			&-pop
 				position: absolute
 				top: 0
 				left: 0
@@ -111,16 +120,20 @@
 					box-shadow: 0 0 3px 3px rgba($grey_color_light, .1)
 
 			&-cont
-				.view-2 &
-				width: 100%
-				height: auto
-				display: block
-
+				.view_2 &
+					width: 100%
+					height: auto
+					display: block
+			
 		&-title,
 		&-info,
 		&-buy
 			margin: 5px 0
-			font-weight: 500
+			font-weight: 500 
+
+		&-title
+			.view_1 & 
+				text-align: center
 
 		&-info
 			color: $grey_color_light
@@ -130,7 +143,7 @@
 			color:  $blue_color
 			font-size: 12px
 
-		&-pop
+		&-pop 
 			position: absolute
 			top: 0
 			right: 0
@@ -154,15 +167,29 @@
 				margin: 0 -15px 15px 0
 				border-left-color: #fff
 
-		&-label-title
-			margin-top: 30px
-			margin-bottom: 5px
-			text-align: center
+	&_svg-check
+		display: none
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 3
+		margin: auto
+
+
 	&_itm-in
 		&:checked
-
+			
 			&+.view_itm
 				box-shadow: none
+				.view_svg-check
+					display: block
+
+				.view_itm-title
+					position: relative
+					z-index: 4
+					color: #fff
 
 				&:hover
 					opacity: 1

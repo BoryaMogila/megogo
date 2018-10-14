@@ -1,0 +1,37 @@
+<section class="view view_3 view_slide">
+	<div class="view_cont">
+		<h2 class="view_main-title">ПРЕМЬЕРЫ</h2>
+		<div class="view_cont-wrap">
+
+			<% popularFims.map((item) => { %>
+			<articl class="view_itm">
+
+				<div class="view_itm-img">
+					<a href="#" class="view_itm-link">
+						<img src="<%- item.image.small %>" alt="" class="view_itm-img-cont">
+						<span class="view_itm-pop">Смотреть</span>
+					</a>
+				</div>
+				<p class="view_itm-title">
+					<%- item.title %>
+				</p>
+				<p class="view_itm-info">
+					<%- item.year %>, Мелодрама</p>
+				<a class="view_itm-buy" href="#">
+					ПОКУПКА
+				</a>
+			</articl>
+			<% }); %>
+		</div>
+
+		<div class="view_cont-bottom">
+			<p class="view_cont-bottom-desc">
+				Войдите, чтобы посмотреть этот фильм бесплатно
+			</p>
+			<a href="#" class="view_cont-bottom-link btn">
+				Посмотреть бесплатно
+			</a>
+		</div>
+
+	</div>
+</section>
