@@ -1,3 +1,6 @@
+//= libs/slick.min.js
+
+
 (function () {
 
 	var headerBurger = document.querySelector('.header_burger');
@@ -56,20 +59,42 @@ $(document).ready(function () {
 			$("#widget_10").toggleClass("hide")
 		});
 
-    })
-    $('#signOut').on('click', function (e) {
-        $('#signOut').toggleClass("hide")
-        $('#signIn').toggleClass("hide")
-        $.removeCookie("user_id")
-    })
-    $('#signIn').on('click', function (e) {
-        $("#widget_10").toggleClass("hide")
-    })
-    $('#registration').on('click', function (e) {
-        $("#form-action-login").toggleClass("hide")
-        $("#form-action-registration").toggleClass("hide")
-        $(".auth-another-action").toggleClass("hide")
-        $("#form-control-age").toggleClass("hide").attr("required", "true");
-        $(".form-control-sex").toggleClass("hide").attr("required", "true");
-    })
+	})
+	$('#signOut').on('click', function (e) {
+		$('#signOut').toggleClass("hide")
+		$('#signIn').toggleClass("hide")
+		$.removeCookie("user_id")
+	})
+	$('#signIn').on('click', function (e) {
+		$("#widget_10").toggleClass("hide")
+	})
+	$('#registration').on('click', function (e) {
+		$("#form-action-login").toggleClass("hide")
+		$("#form-action-registration").toggleClass("hide")
+		$(".auth-another-action").toggleClass("hide")
+		$("#form-control-age").toggleClass("hide").attr("required", "true");
+		$(".form-control-sex").toggleClass("hide").attr("required", "true");
+	})
+
+	$(".view_slide .view_cont-wrap").slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		infinite: false,
+		dots: false,
+		responsive: [{
+
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 3,
+			}
+
+		}, {
+
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 2,
+			}
+
+		}]
+	});
 })

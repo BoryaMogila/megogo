@@ -7,7 +7,8 @@ let gulp = require('gulp'),
 	gcmq = require('gulp-group-css-media-queries'),
 	cssmin = require('gulp-cssmin'),
 	plumber = require('gulp-plumber'),
-	minify = require('gulp-minify'),
+	uglify = require('gulp-uglify'),
+	rigger = require('gulp-rigger'),
 	autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
@@ -30,7 +31,8 @@ gulp.task('sass:watch', function () {
 
 gulp.task('js', function () {
 	return gulp.src('./js/*.js')
-		.pipe(minify())
+		.pipe(rigger())
+		.pipe(uglify())
 		.pipe(gulp.dest('./public/js'));
 });
 

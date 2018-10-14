@@ -20,7 +20,9 @@ input
 	line-height: 32
 	border: 1px solid $grey_color_light2
 
+.btn,
 button
+	text-align: center
 	height: 32px
 	line-height: 32px
 	padding: 0 15px
@@ -38,7 +40,8 @@ body
 	line-height: 1.25
 	font-family: 'Roboto', sans-serif
 	margin: 0
-	
+	color:  $grey_color
+
 	&.open_modal_pop
 		overflow: hidden
 		position: fixed
@@ -67,4 +70,59 @@ a
 	display: none !important
 
 
+// 
+.slick
+	&-dots
+		display: none !important
 
+	.view_slide &
+		&-arrow
+			width: 40px
+			height: 30px
+			border: 1px solid $grey_color_light2
+			position: absolute
+			right: 15px
+			top: 0
+			overflow: hidden
+			color: transparent
+			background: #fff
+
+			&::before,
+			&::after
+				content: ''
+				display: block
+				width: 10px
+				height: 2px
+				position: absolute
+				top: 50%
+				left: 50%
+				background: $grey_color
+
+			&.slick-disabled
+				&::before,
+				&::after
+					background: $grey_color_light2
+		&-prev
+			right: 39px
+			+to_768
+				right: 54px
+
+			&::before
+				transform: rotate(45deg)
+				margin-left: -6px
+				margin-top: 2px
+			&::after
+				transform: rotate(-45deg)
+				margin-left: -6px
+				margin-top: -4px
+
+		&-next 
+			transform: rotate(180deg)
+			&::before
+				transform: rotate(-45deg)
+				margin-left: -6px
+				margin-top: -4px
+			&::after
+				transform: rotate(45deg)
+				margin-left: -6px
+				margin-top: 2px
