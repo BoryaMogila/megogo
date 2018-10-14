@@ -41,6 +41,7 @@ async function indexAction (ctx) {
     });
   });
   views.forEach(({ id, count }) => {
+    if (films.includes(id.toString())) return;
     if (!commonSimilar[id]) {
       commonSimilar[id] = { range: count / 20 };
     }
