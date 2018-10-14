@@ -1,6 +1,30 @@
 .top-block
-	max-width: 990px
-	padding: 0 15px
-	margin: 0 auto
+	background: #000
+	color: #fff
+	margin-top: -20px
+	&_cont
+		display: flex
+		align-items: center
+		max-width: 990px
+		padding: 0 15px
+		margin: 0 auto
 
+		+to_768
+			flex-direction: column
+			padding: 15px
+
+
+	&_link
+		background: $yelow_red_color
+		height: 40px
+		background-image: 40px
+		width: 100%
+		display: block
+		display: flex
+		align-items: center
+		justify-content: center
+
+
+	&_right
+		width: 100%
 	
