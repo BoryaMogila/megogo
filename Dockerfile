@@ -17,4 +17,4 @@ COPY index.kubernetes.js .
 RUN npm install
 
 EXPOSE 8081
-CMD node ./index.kubernetes.js
+CMD node index.kubernetes.js
