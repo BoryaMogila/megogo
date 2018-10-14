@@ -1,6 +1,7 @@
 const axios = require('axios');
 const _ = require('lodash');
 const fs = require('fs');
+const testDbManager = require('../../app/managers/testDbManager')
 
 async function index () {
   console.time('similar');
@@ -47,4 +48,23 @@ async function setRange ({ video: { id, country, genres, people, year }, videosA
   return similar;
 }
 
-module.exports = { index };
+// cd /var/www/megogo; /usr/bin/node --harmony ./console.js --section makeSimilar --action setInDB
+async function setInDB () {
+   var jsonUsersView = JSON.parse(fs.readFileSync('./similar.json'))
+       _.map(jsonUsersView,function (intem,key) {
+           let userId = jsonUsersView[key]
+           testDbManager.userData({
+               user_id:userId
+           })
+           _.map(jsonUsersView[key], function(item_i){
+
+               console.log(item_i)
+               return
+           })
+           return;
+       })
+    process.exit();
+}
+
+
+module.exports = { index , setInDB};
