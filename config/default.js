@@ -10,9 +10,9 @@ module.exports = {
     },
   database: {
     master: {
-      host: '10.1.18.111',
-      user: 'master',
-      password: 'gtnhjdbx',
+      host: 'mysql',
+      user: 'root',
+      password: '123',
       port: '3306',
       database: 'test',
       debug: false,
