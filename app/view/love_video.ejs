@@ -1,7 +1,7 @@
 <section class="view view-2 view_slide">
-    <div class="view_cont">
-        <input type="text" id="search">
-        <div class="view_cont-wrap">
+    <form action="#" class="view_cont">
+        <input type="text" id="search" class="vid_itm">
+        <div class="view_cont-wrap" id="items">
         <% videos.map((video, i) => {%>
         <input type="checkbox" value="" class="view_itm-in" id="video_item_<%- i %>">
         <label for="video_item_<%- i %>">
@@ -20,5 +20,9 @@
         </label>
         <% }) %>
         </div>
-    </div>
+        <button type="reset">Отменить</button>
+        <button type="submit">Далее</button>
+    </form>
 </section>
+
+<script src="/public/js/textSearch.js"></script>

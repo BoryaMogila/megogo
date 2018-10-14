@@ -26,7 +26,7 @@ async function apiAction (ctx) {
       if (queryGeners.includes(gener)) includes = true;
     });
     return includes;
-  });
+  }).slice(0, 12);
 
 }
 
