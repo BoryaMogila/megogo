@@ -1,3 +1,6 @@
+//= libs/slick.min.js
+
+
 (function () {
 
 	var headerBurger = document.querySelector('.header_burger');
@@ -70,3 +73,29 @@ $(document).ready(function () {
 		$(".form-control-sex").toggleClass("hide")
 	})
 })
+
+
+
+
+
+$(".view_slide .view_cont-wrap").slick({
+	slidesToShow: 4,
+	slidesToScroll: 1,
+	infinite: false,
+	dots: false,
+	responsive: [{
+
+		breakpoint: 768,
+		settings: {
+			slidesToShow: 3,
+		}
+
+	}, {
+
+		breakpoint: 480,
+		settings: {
+			slidesToShow: 2,
+		}
+
+	}]
+});

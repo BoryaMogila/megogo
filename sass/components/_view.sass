@@ -1,29 +1,71 @@
 
 .view
+
+	&_main-title
+		font-size: 44px
+		margin: 10px 0
+		font-weight: 300
+		+from_768
+			padding-right: 120px
+
+		+to_768
+			font-size: 22px
+
 	&_cont
-		max-width: 960px
-		margin: 0 auto
+		max-width: 990px
+		margin: 0 auto 30px
 		padding: 0 15px
+		position: relative
+		
+		&-bottom
+			display: flex
+			justify-content: space-between
+			+to_768
+				flex-direction: column
+
+			&-desc
+				margin: 0
+				+from_768
+					max-width: 50%
+					padding-right: 15px
+				+to_768
+					margin-bottom: 10px
+			&-link
+				+from_768
+					width: calc(50% - 20px)
 
 
 		&-wrap
+			.view_slide & 
+				overflow: hidden
+
 			font-size: 0
-			+to_768
-				margin-right: -15px
-			+from_768
-				margin-right: -40px
+
+			&.slick-slider
+				+from_768
+					margin: 0 -20px 20px
+				+to_768
+					margin: 0 -7.5px 20px
+
+			&:not(.slick-slider)
+				+to_768
+					margin-right: -15px
+				+from_768
+					margin-right: -40px
 	&_itm
 
-		.view-2 & 
-			width: 205px
-
+		.view_slide & 
+			margin: 0 20px
+			
+			+to_768
+				margin: 0 7.5px
+		vertical-align: top
 		display: inline-block
 		font-size: 16px 
 		margin:
 			right: 40px
 			bottom: 40px
-		width: 200px
-		text-align: center
+		width: 210px
 		transition-duration: .3s
 		position: relative
 		box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
@@ -43,42 +85,85 @@
 			width: calc(50% - 15px)
 
 		&:hover
-			cursor: pointer
-			opacity: 0.75
-
-		
+			.view_1 & 
+				cursor: pointer
+				opacity: 0.75
 
 		&-img
 			height: 170px
 			width: 100%
-			
+			position: relative
+			margin-bottom: 7px
+
+			&:hover
+				.view_itm-pop
+					opacity: 1
+
 			.view-2 &
 				height: auto
-				margin-bottom: 15px
 				+from_768
-					box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
+					box-shadow: 0 0 3px 3px rgba($grey_color_light, .1)
 			
 			&-cont
 				.view-2 &
-					width: 205px
+					width: 100%
 					height: auto
 					display: block
-
 			
-.view_itm-in
-	&:checked
+		&-title,
+		&-info,
+		&-buy
+			margin: 5px 0
+			font-weight: 500
 
-		&+.view_itm
-			box-shadow: none
+		&-info
+			color: $grey_color_light
+			font-size: 12px
 
-			&:hover
-				opacity: 1
-				
-			&::after 
+		&-buy
+			color:  $blue_color
+			font-size: 12px
+
+		&-pop			
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			margin: auto
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-direction: column
+			color: #fff
+			font-size: 12px
+			opacity: 0
+			transition-duration: .3s
+			background: rgba($grey_color , .5)
+
+			&::before
 				content: ''
-				position: absolute
-				top: 0
-				right: 0
-				bottom: 0
-				left: 0
-				background: rgba($yelow_red_color ,  .5)
+				display: block
+				border: 15px solid transparent
+				margin: 0 -15px 15px 0
+				border-left-color: #fff
+			
+	&_itm-in
+		&:checked
+
+			&+.view_itm
+				box-shadow: none
+
+				&:hover
+					opacity: 1
+					
+				&::after 
+					content: ''
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+					background: rgba($yelow_red_color ,  .5)
+
+	
