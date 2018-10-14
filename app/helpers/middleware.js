@@ -10,6 +10,7 @@ async function middlewarePsp (ctx,next) {
             }
         }
     } catch (e) {
+        console.log(e);
     }
     await next();
 }
