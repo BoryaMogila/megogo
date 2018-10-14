@@ -20,13 +20,9 @@
 		&-bottom
 			display: flex
 			justify-content: space-between
-			
 			+to_768
 				flex-direction: column
 
-			.view_1 & 
-				justify-content: center
-			
 			&-desc
 				margin: 0
 				+from_768
@@ -35,21 +31,13 @@
 				+to_768
 					margin-bottom: 10px
 			&-link
-				
-				.view_1 & 
-					&__of
-						background: #fff
-						color: #A6A6A6
+				&__of
+					background: #fff
+					color:  $grey_color
+					+to_768
+						margin-bottom: 20px
+						box-shadow: 0 0 0  1px  $grey_color_light2
 
-
-					background: $yelow_red_color
-					height: 40px
-					line-height: 40px
-
-					+from_768
-						max-width: 205px
-						margin: 0 20px
-				
 				+from_768
 					width: calc(50% - 20px)
 
@@ -83,14 +71,14 @@
 		margin:
 			right: 40px
 			bottom: 40px
-		width: 210px
+		max-width: 162px
 		transition-duration: .3s
 		position: relative
-		box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
-		.view_2 &
-			box-shadow: none
-		+from_768
-			box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
+
+		.view_geners &
+			box-shadow: 0 0 0 1px rgba($grey_color_light, .2)
+			+from_768
+				box-shadow: 0 0 8px 7px rgba($grey_color_light, .1)
 
 		+to_768
 			width: calc(25% - 15px)
@@ -108,10 +96,12 @@
 				opacity: 0.75
 
 		&-img
-			height: 170px
 			width: 100%
 			position: relative
 			margin-bottom: 7px
+			
+			.view_2 & 
+				height: auto
 
 			&-pop
 				position: absolute
@@ -124,7 +114,7 @@
 				.view_itm-pop
 					opacity: 1
 
-			.view_2 &
+			.view-2 &
 				height: auto
 				+from_768
 					box-shadow: 0 0 3px 3px rgba($grey_color_light, .1)
@@ -153,7 +143,7 @@
 			color:  $blue_color
 			font-size: 12px
 
-		&-pop
+		&-pop 
 			position: absolute
 			top: 0
 			right: 0
@@ -179,13 +169,27 @@
 
 	&_svg-check
 		display: none
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 3
+		margin: auto
 
 
 	&_itm-in
 		&:checked
-
+			
 			&+.view_itm
 				box-shadow: none
+				.view_svg-check
+					display: block
+
+				.view_itm-title
+					position: relative
+					z-index: 4
+					color: #fff
 
 				&:hover
 					opacity: 1
@@ -198,4 +202,3 @@
 					bottom: 0
 					left: 0
 					background: rgba($yelow_red_color ,  .5)
-

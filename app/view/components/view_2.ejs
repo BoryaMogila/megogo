@@ -5,21 +5,18 @@
 
 			<% popularFims.map((item) => { %>
 			<articl class="view_itm">
-
 				<div class="view_itm-img">
-					<a href="#" class="view_itm-link">
-						<img src="<%- item.image.small %>" alt="" class="view_itm-img-cont">
-						<span class="view_itm-pop">Смотреть</span>
+					<a href="<%- item.href %>" class="view_itm-link">
+						<img src="<%- item.image.small%>" alt="" class="view_itm-img-cont">
 					</a>
 				</div>
 				<p class="view_itm-title">
-					<%- item.title %>
+					<%= item.title %>
 				</p>
 				<p class="view_itm-info">
-					<%- item.year %>, Мелодрама</p>
-				<a class="view_itm-buy" href="#">
-					ПОКУПКА
-				</a>
+					<%= item.year %>,
+					<%= item.genres[0] %>
+				</p>
 			</articl>
 			<% }); %>
 		</div>

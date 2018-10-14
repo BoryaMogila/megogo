@@ -1,0 +1,74 @@
+.final
+	max-width: 990px
+	padding: 0 15px 20px
+	display: flex
+	margin: 0 auto 20px
+	+to_520
+		flex-direction: column
+	&_img
+		flex-shrink: 0
+		align-self: flex-start
+		margin-right: 40px
+
+	&_title
+		margin-top: 0
+
+	&_cat
+		font-weight: 700
+
+	&_chars
+		display: flex
+		align-items: center
+
+	&_char
+		border: 1px solid $grey_color_light2
+		color: $grey_color_light
+		font-weight: 300
+		font-size: 12px
+		margin-right: 5px
+		padding: 5px
+
+	
+
+	&-chars__2
+		border-top: 2px solid #DEDEDE
+		border-bottom: 2px solid #DEDEDE
+		margin: 15px 0
+		padding: 10px 0
+		display: flex
+
+		&-desc
+			font-size: 12px
+
+		&-name
+			color: #A6A6A6
+			font-size: 12px
+			margin-bottom: 5px
+
+		&-itm
+			display: flex
+			flex-direction: column
+			margin-right: 20px
+		+to_768
+			flex-direction: column
+
+	&_bottom
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		+to_640
+			flex-direction: column
+
+		&-link
+			+from_768
+				width: calc(50% - 40px)
+			box-shadow: 0 0 0 1px $grey_color_light2
+			background: #fff
+			color:  $grey_color_light
+			width: 100%
+			&__2
+				+to_640
+					margin-top: 10px
+				background:  $yelow_red_color
+				color: #fff
