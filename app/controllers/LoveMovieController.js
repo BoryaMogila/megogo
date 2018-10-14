@@ -20,14 +20,14 @@ async function apiAction (ctx) {
     })
   }
   if (!queryGeners.length) {
-    ctx.body = videos.slice(0, 12);
+    ctx.body = _.shuffle(videos).slice(0, 12);
     return
   }
-  ctx.body = videos.filter((video) => {
+  ctx.body = _.shuffle(videos.filter((video) => {
     const { genres } = video;
     video.genres = genres.filter(gener => queryGeners.includes(gener));
     return video.genres.length;
-  }).slice(0, 12);
+  })).slice(0, 12);
 
 }
 
@@ -48,7 +48,7 @@ async function indexAction (ctx) {
       return video.genres.length;
     })
   }
-  await ctx.render('love_video', { videos: videos.slice(0, 12), geners: queryGeners });
+  await ctx.render('love_video', { videos: _.shuffle(videos).slice(0, 12), geners: queryGeners });
 }
 
 module.exports = {
