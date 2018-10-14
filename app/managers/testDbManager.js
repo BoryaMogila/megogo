@@ -5,6 +5,8 @@ const db = require('../../data/users.json'),
       query = require("mysql-query-promise"),
        _ = require('lodash'),
       queryHelper = require('node-mysql-query-helper');
+       _ = require('underscore');
+
 
 module.exports = {
 
@@ -38,35 +40,18 @@ module.exports = {
         }
     },
 
-    userDataTest: function userDataTest(params){
-        try{
-            var searchString =  queryHelper.set(params) || "";
-            if(params.login){
-                var qs = `insert INTO test3.users_copy1 set ${searchString}`;
-                return query(qs, ..._.values(params),  'master')
-            }
-            return
-        }catch (e) {
-            console.log(e)
-            return
-        }
-
-    },
 
     userData: function userData(params){
         try{
-            var searchString =  queryHelper.set(params) || "";
             if(params.login){
-                console.log(params)
-                var qs = `insert IGNORE test3.users set ${searchString}`;
-                return query(qs, [..._.values(params)],  'master')
+                var qs = 'insert IGNORE test3.users set login=?, sex=?, age=?';
+                return query(qs, [params.login,params.sex,params.age],  'master')
             }
             return
         }catch (e) {
             console.log(e)
             return
         }
-
     },
 
     /**
