@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    if($.cookie('user_id')){
+        $("#signOut").toggleClass("hide")
+    }else {
+        $("#signIn").toggleClass("hide")
+    }
   $('#form-login').on('submit', function (e) {
     e.preventDefault()
     var queryParams = $(this).serialize()
