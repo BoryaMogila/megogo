@@ -20,9 +20,13 @@
 		&-bottom
 			display: flex
 			justify-content: space-between
+			
 			+to_768
 				flex-direction: column
 
+			.view_1 & 
+				justify-content: center
+			
 			&-desc
 				margin: 0
 				+from_768
@@ -31,6 +35,21 @@
 				+to_768
 					margin-bottom: 10px
 			&-link
+				
+				.view_1 & 
+					&__of
+						background: #fff
+						color: #A6A6A6
+
+
+					background: $yelow_red_color
+					height: 40px
+					line-height: 40px
+
+					+from_768
+						max-width: 205px
+						margin: 0 20px
+				
 				+from_768
 					width: calc(50% - 20px)
 
@@ -101,7 +120,8 @@
 			width: 100%
 			position: relative
 			margin-bottom: 7px
-			& img
+
+			&-pop
 				position: absolute
 				top: 0
 				left: 0
@@ -112,13 +132,13 @@
 				.view_itm-pop
 					opacity: 1
 
-			.view-2 &
+			.view_2 &
 				height: auto
 				+from_768
 					box-shadow: 0 0 3px 3px rgba($grey_color_light, .1)
 			
 			&-cont
-				.view-2 &
+				.view_2 &
 					width: 100%
 					height: auto
 					display: block
@@ -130,7 +150,8 @@
 			font-weight: 500
 
 		&-title
-			text-align: center
+			.view_1 & 
+				text-align: center
 
 		&-info
 			color: $grey_color_light
@@ -164,17 +185,10 @@
 				margin: 0 -15px 15px 0
 				border-left-color: #fff
 
-<<<<<<< HEAD
 	&_svg-check
 		display: none
 
 
-=======
-		&-label-title
-			margin-top: 30px
-			margin-bottom: 5px
-			text-align: center
->>>>>>> d239a7ba3108d2ed05f85a843b9088db3ece3767
 	&_itm-in
 		&:checked
 			
