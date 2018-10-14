@@ -1,5 +1,6 @@
 <section class="view view_1 view_film">
-    <form action="#" class="view_cont">
+    <form action="/recommendations?<%= geners.map(gener => 'gener=' + gener).join('&')%>"
+        class="view_cont">
         <input type="text" id="search" class="vid_itm">
         <div class="view_cont-wrap" id="items">
             <% videos.map((video, i) => {%>
@@ -21,8 +22,10 @@
             </label>
             <% }) %>
         </div>
-        <button type="reset">Отменить</button>
-        <button type="submit">Далее</button>
+        <div class="view_cont-bottom">
+            <button type="reset" class="view_cont-bottom-link view_cont-bottom-link__of btn">Отменить</button>
+            <button type="submit" class="view_cont-bottom-link btn">Далее</button>
+        </div>
     </form>
 </section>
 

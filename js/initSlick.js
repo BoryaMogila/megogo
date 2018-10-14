@@ -8,6 +8,7 @@
   var body = document.querySelector('body');
   var headerPopBg = document.querySelector('.header_pop-bg');
 
+<<<<<<< HEAD
   var mobPopupFunc = function () {
     if (body.classList.contains('header_nav-open')) {
       body.classList.remove('header_nav-open')
@@ -20,6 +21,8 @@
 
   headerPopBg.addEventListener('click', mobPopupFunc);
 
+=======
+>>>>>>> ad16c569ae512482fc9bd1eba61b0414f29d0987
 }())
 $(document).ready(function () {
   $(".view_slide .view_cont-wrap").slick({

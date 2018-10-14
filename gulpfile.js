@@ -32,7 +32,7 @@ gulp.task('sass:watch', function () {
 gulp.task('js', function () {
 	return gulp.src('./js/*.js')
 		.pipe(rigger())
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('./public/js'));
 });
 
