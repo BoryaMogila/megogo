@@ -5,7 +5,7 @@ const _ = require('lodash');
 
 
 async function indexAction (ctx) {
-  let { films, geners: queryGeners } = qs.parse(ctx.query);
+  let { films = [], geners: queryGeners = [] } = qs.parse(ctx.query);
   queryGeners = queryGeners.map(gener => decodeURI(gener));
   const commonSimilar = {};
   console.log(films)

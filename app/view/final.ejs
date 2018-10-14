@@ -23,21 +23,22 @@
 		</p>
 
 		<ul class="final-chars__2">
+			<% if (video.audio_list && video.audio_list.length) { %>
 			<li class="final-chars__2-itm">
 				<span class="final-chars__2-name">ПЕРЕВОД</span>
-				<span class="final-chars__2-desc">Русский, Украинский</span>
+				<span class="final-chars__2-desc"><%= (video.audio_list || []).join(', ')%></span>
 			</li>
+			<% } %>
+			<% if (video.subtitles && video.subtitles.length) { %>
 			<li class="final-chars__2-itm">
 				<span class="final-chars__2-name">СУБТИТРЫ</span>
-				<span class="final-chars__2-desc">Русский, Украинский</span>
+				<span class="final-chars__2-desc"><%= (video.subtitles || []).join(', ')%></span>
 			</li>
+			<% } %>
 		</ul>
 
 		<div class="final_bottom">
-			<a href="#" class="final_bottom-link btn">
-				313 отзывов
-			</a>
-			<a href="#" class="final_bottom-link btn final_bottom-link__2">
+			<a href="<%- video.video_url %>" class="final_bottom-link btn final_bottom-link__2">
 				Смотреть
 			</a>
 		</div>

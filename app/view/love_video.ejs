@@ -1,7 +1,7 @@
 <section class="view view_1 view_film">
     <form action="/recommendations" class="view_cont">
         <% geners.map((gener) => { %>
-        <input type="text" value="<%- gener %>" style="display: none" name="geners" />
+        <input type="text" value="<%- gener %>" style="display: none" name="geners[]" />
         <% }) %>
         <input type="text" id="search" class="vid_itm">
         <div class="view_cont-wrap" id="items">
