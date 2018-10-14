@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    if($.cookie('user_id')){
+        $("#signOut").toggleClass("hide")
+    }else {
+        $("#signIn").toggleClass("hide")
+    }
   $('#form-login').on('submit', function (e) {
     e.preventDefault()
     var queryParams = $(this).serialize()
@@ -30,4 +35,20 @@ $(document).ready(function () {
     $("#form-control-age").toggleClass("hide").attr("required", "true");
     $(".form-control-sex").toggleClass("hide").attr("required", "true");
   })
+
+
+    $(".header_burger").on("click", mobPopupFunc)
+    $(".header_pop-bg").on("click", mobPopupFunc)
 })
+
+
+var body = document.querySelector('body');
+
+
+var mobPopupFunc = function () {
+    if (body.classList.contains('header_nav-open')) {
+        body.classList.remove('header_nav-open')
+        remove;
+    }
+    body.classList.add('header_nav-open')
+}
