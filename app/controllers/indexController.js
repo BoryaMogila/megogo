@@ -10,7 +10,7 @@ async function indexAction (ctx) {
     var popularFims = []
     _.map(popularFimsResp, function (item) {
         if(item.year && item.year == 2018){
-            popularFims.push({id: item.id, image: item.image, year: item.year, title: item.title})
+            popularFims.push({id: item.id, image: item.image, year: item.year, title: item.title, genres: item.genres,href: `https://megogo.net/ru/view/${item.id}` })
         }
         return popularFims
     })
