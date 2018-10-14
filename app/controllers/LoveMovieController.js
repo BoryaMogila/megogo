@@ -4,8 +4,11 @@ const _ = require('lodash');
 
 
 async function apiAction (ctx) {
-  const { geners: queryGeners = [], text } = qs.parse(ctx.query);
-  const res = await axios(`http://api.hackathon.media/search?text=${encodeURIComponent(text)}`);
+  let { geners: queryGeners = [], text } = qs.parse(ctx.query);
+  queryGeners = queryGeners.map(gener => decodeURI(gener));
+  console.log(queryGeners)
+  console.log(queryGeners)
+  const res = await axios(`http://api.hackathon.media/search?text=${encodeURIComponent(decodeURI(text))}`);
   let videos = _.get(res, 'data.data.video_list', []);
   if (!videos.length) {
     const res = await axios(`http://api.hackathon.media/video`);
@@ -17,21 +20,20 @@ async function apiAction (ctx) {
     })
   }
   if (!queryGeners.length) {
-    ctx.body = videos;
+    ctx.body = videos.slice(0, 12);
     return
   }
-  ctx.body = videos.filter(({ genres }) => {
-    let includes = false;
-    genres.forEach(gener => {
-      if (queryGeners.includes(gener)) includes = true;
-    });
-    return includes;
+  ctx.body = videos.filter((video) => {
+    const { genres } = video;
+    video.genres = genres.filter(gener => queryGeners.includes(gener));
+    return video.genres.length;
   }).slice(0, 12);
 
 }
 
 async function indexAction (ctx) {
-  const { geners: queryGeners = [], text } = qs.parse(ctx.query);
+  let { geners: queryGeners = [], text } = qs.parse(ctx.query);
+  queryGeners = queryGeners.map(gener => decodeURI(gener));
   const res = await axios(`http://api.hackathon.media/video`);
   let videos = _.get(res, 'data.data.video_list', []);
   videos.sort((a, b) => {
@@ -39,8 +41,14 @@ async function indexAction (ctx) {
     const rangeB = (b.rating_imdb + b.rating_kinopoisk) / 2;
     return rangeB - rangeA;
   });
-  console.log(videos)
-  await ctx.render('love_video', { videos: videos.slice(0, 12) });
+  if (queryGeners.length) {
+    videos = videos.filter((video) => {
+      const { genres } = video;
+      video.genres = genres.filter(gener => queryGeners.includes(gener));
+      return video.genres.length;
+    })
+  }
+  await ctx.render('love_video', { videos: videos.slice(0, 12), geners: queryGeners });
 }
 
 module.exports = {
